@@ -2,11 +2,23 @@
 // Global Config
 // ==========================================================================
 
-// Font Stacks
+// Path to Assets
+$path-img: '../img/';
+$path-font: '../font/';
 
+// Fonts - Import mixin is in functions.scss for cascade order and it has function elements in it.
+$font-url-outfit: 'https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap';
+@include font-import($font-url-outfit);
+
+// Font Stacks
+$font-family--primary: 'Outfit', Helvetica, Arial, sans-serif;
 
 // Font Weights
-
+$font-w-xlight: 100;
+$font-w-light: 250;
+$font-w-normal: 400;
+$font-w-bold: 700;
+$font-w-xbold: 900;
 
 // Descriptive Base Colors
 
@@ -14,7 +26,17 @@
 // Color Usage
 
 
-// Color Palette Modifiers
+// Color Palette
+$color-palette: (
+  lightmode: (
+    palette: (
+      base: #FEF3E2,
+      secondary: #FAB12F,
+      tertiary: #FA812F,
+      accent: #FA4032,
+    ),
+  ),
+);
 
 
 // UI Colors
@@ -36,3 +58,7 @@
 
 
 // Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-extra-large: 1200px;

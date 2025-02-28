@@ -2,11 +2,15 @@
 // Functions
 // ==========================================================================
 
-// Import if Google Fonts URL is defined
-
-
-// Calculate em values
-
+// Font import mixin/function
+@mixin font-import($font-name) {
+  @if variable-exists(font-name) {
+    @import url($font-name);
+  } 
+  @else {
+    @warn "Font #{$font-name} variable was not found so it was not imported";
+  }
+}
 
 // Call the color palette modifiers in color values
 
