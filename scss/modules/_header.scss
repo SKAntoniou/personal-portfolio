@@ -3,7 +3,11 @@
 // ==========================================================================
 
 .content-area > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @include mq(l) {
     display: none;
   }
 }
+

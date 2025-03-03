@@ -1,0 +1,68 @@
+.contact-me {
+  display: grid;
+  gap: $grid-gap-padding;
+  grid-template-columns: 1fr;
+  @include mq(l) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(xl) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.contact-me-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-gap-padding;
+  @include mq(m) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(l) {
+    grid-template-columns: 1fr;
+  }
+  @include mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+[id^="contact-me-"] {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+#contact-me-name- {
+  @include mq(m) {
+    &first {
+      grid-column: 1 / 2;
+    }
+    &last {
+      grid-column: 2 / 3;
+    }
+  }
+  @include mq(l) {
+    &first, &last {
+      grid-column: 1 / -1;
+    }
+  }
+  @include mq(xl) {
+    &first {
+      grid-column: 1 / 2;
+    }
+    &last {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+
+// #contact-me-name- {
+//   &first, &last {
+//     @include mq(xl) {
+//       width: calc(50% - (#{$grid-gap-padding} / 2));
+//     }
+//   }
+//   &last {
+//     @include mq(xl) {
+//       margin-left: $grid-gap-padding;
+//     }
+//   }
+// }

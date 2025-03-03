@@ -1,0 +1,23 @@
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-gap-padding;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include mq(s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+}

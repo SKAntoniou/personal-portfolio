@@ -1,7 +1,44 @@
 // ==========================================================================
-// Container
+// Containers + Page Layout for easier editing.
 // ==========================================================================
 
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include mq(l) {
+    grid-template-columns: $sidebar-width-site-nav auto;
+    > .content-area {
+      grid-column: 2 / 3;
+      > * {
+        height: 100vh;
+      }
+    }
+  }
+  height: 100vh;
+}
+
+nav {
+  // Layout
+  display: none;
+  @include mq(l){
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+}
+
 .container {
-  padding: $global-padding;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
+  margin: 0 auto;
+  @include mq(m) {
+    max-width: $break-max-width-medium;
+  }
+  @include mq(l) {
+    max-width: calc(#{$break-max-width-large} - #{$sidebar-width-site-nav});
+  }
+  @include mq(xl) {
+    max-width: calc(#{$break-max-width-extra-large} - #{$sidebar-width-site-nav});
+  }
 }
