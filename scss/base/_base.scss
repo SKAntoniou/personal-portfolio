@@ -6,6 +6,8 @@
   font-family: $font-family--primary;
   font-size: 1rem;
   font-weight: $font-w-normal;
+  color: white;
+  letter-spacing: 0.1rem;
 }
 
 body {
@@ -13,11 +15,16 @@ body {
   grid-template-columns: 1fr;
   @include mq(l) {
     grid-template-columns: minmax(100px, 250px) auto;
-    > * {
+    > .content-area {
       grid-column: 2 / 3;
+      > * {
+        height: 100vh;
+      }
     }
   }
   height: 100vh;
+  background-image: $background-noise;
+  background-color: palette(darkmode, palette, base);
 }
 
 // Lists
@@ -25,6 +32,12 @@ ul {
   margin: 0;
   padding:0;
   list-style-type: none;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 // Images

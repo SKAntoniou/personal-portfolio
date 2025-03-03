@@ -1,8 +1,9 @@
 // ==========================================================================
-// Grid Columns
+// Header
 // ==========================================================================
 
-// Calculate grid columns
-
-
-// Column styles
+.content-area > header {
+  @include mq(l) {
+    display: none;
+  }
+}
