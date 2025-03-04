@@ -31,6 +31,10 @@ ul {
 a {
   color: inherit;
   text-decoration: inherit;
+  padding: 0.1em;
+  &:hover {
+    border-bottom: 1px solid palette(darkmode, palette, accent);
+  }
 }
 
 // Images

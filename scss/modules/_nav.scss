@@ -27,9 +27,6 @@ nav {
   li {
     margin: 1.5rem;
     font-size: 1.2rem;
-    padding: 0.1rem;
-
-    @extend %a-hover-underline;
   }
 }
 
@@ -40,6 +37,7 @@ nav {
   justify-content: space-around;
   a:hover {
     color: palette(darkmode, palette, accent);
+    border: none;
   }
 }
 

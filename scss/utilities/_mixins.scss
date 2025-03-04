@@ -47,6 +47,9 @@
   .icon-keyboard_arrow_#{$arrow-direction} {
     font-size: 3rem;
   }
+  &:hover {
+    border: none;
+  }
 }
 
 // Generate modifier color classes
