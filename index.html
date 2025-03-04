@@ -12,14 +12,14 @@
       <div class="avatar">SKA</div>
       <ul class="nav-list">
         <li><a href="#">About Me</a></li>
-        <li><a href="#">My Portfolio</a></li>
-        <li><a href="#">Coding Examples</a></li>
-        <li><a href="#">SCS Scheme</a></li>
-        <li><a href="#">Contact Me</a></li>
+        <li><a href="#projects-section">My Portfolio</a></li>
+        <li><a href="./coding-examples.html">Coding Examples</a></li>
+        <li><a href="./scs-scheme.html">SCS Scheme</a></li>
+        <li><a href="#contact-me-section">Contact Me</a></li>
       </ul>
       <div class="socials">
-        <a href="#" class="icon-linkedin"></a>
-        <a href="#" class="icon-github"></a>
+        <a href="https://www.linkedin.com/in/skantoniou/" target="_blank" class="icon-linkedin"></a>
+        <a href="https://github.com/SKAntoniou" target="_blank" class="icon-github"></a>
       </div>
     </nav>
 
@@ -30,80 +30,97 @@
         <span class="hamburger-button"></span>
       </header>
   
-      <div class="banner">
-        <header>
-          <h1>My Name is Stephan Antoniou</h1>
-          <p>I'm a Web Developer</p>
-        </header>
-        <div class="hint-scroll-down">
-          <div>Scroll Down</div>
-          <div class="icon-keyboard_arrow_down"></div>
+      <div class="fullscreen-page">
+        <div class="banner">
+          <header>
+            <h1>My Name is Stephan Antoniou</h1>
+            <p>I'm a Web Developer</p>
+          </header>
+          <div class="hint-scroll-down">
+            <div>Scroll Down</div>
+            <div class="icon-keyboard_arrow_down"></div>
+          </div>
         </div>
       </div>
       
-      <div class="projects container">
+      <div class="fullscreen-page" id="projects-section"> 
+        <div class="projects container">
 
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project One</h3>
-          <p>View Project</p>
-        </div>
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project One</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
 
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project Two</h3>
-          <p>View Project</p>
-        </div>
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project Two</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
 
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project Three</h3>
-          <p>View Project</p>
-        </div>
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project Three</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
 
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project Four</h3>
-          <p>View Project</p>
-        </div>
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project Four</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
 
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project Five</h3>
-          <p>View Project</p>
-        </div>
-  
-        <div class="project-item">
-          <img src="img/800x600.svg" alt="placeholder">
-          <h3>Project Six</h3>
-          <p>View Project</p>
-        </div>
-
-      </div>
-  
-      <div class="contact-me container">
-
-        <div class="contact-me-info">
-          <h2>Get in Touch</h2>
-          <p>For custom websites or engineering services. Use contact form or send a query direct to my email.</p>
-          <a href="mailto:email@domain.com">email@domain.com</a>
-        </div>
-
-        <div class="contact-me-form">
-          <input id="contact-me-name-first" type="text" placeholder="First Name*">
-          <input id="contact-me-name-last" type="text" placeholder="Last Name*">
-          <input id="contact-me-email" type="email" placeholder="Email Address*">
-          <input id="contact-me-subject" type="text" placeholder="Subject">
-          <input id="contact-me-message" type="text" placeholder="Message">
-          <input id="contact-me-form-submit" type="submit">
-        </div>
-
-      </div>
-  
-      <footer>
-        <p>test</p>
-      </footer>
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project Five</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
     
+          <div class="project-item">
+            <img src="img/800x600.svg" alt="placeholder">
+            <h3>Project Six</h3>
+            <a>View Project<span class="icon-arrow_forward"></span></a>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="fullscreen-page" id="contact-me-section">
+
+        <div class="contact-me container">
+          <div class="contact-me-container">
+            <div class="contact-me-info">
+              <h2>Get in Touch</h2>
+              <p>For custom websites or engineering services. Use contact form or send a query direct to my email.</p>
+              <a href="mailto:email@domain.com">email@domain.com</a>
+            </div>
+
+            <div class="contact-me-form">
+              <input id="contact-me-form-name-first" type="text" placeholder="First Name*">
+              <input id="contact-me-form-name-last" type="text" placeholder="Last Name*">
+              <input id="contact-me-form-email" type="email" placeholder="Email Address*">
+              <input id="contact-me-form-subject" type="text" placeholder="Subject">
+              <textarea id="contact-me-form-message" placeholder="Message"></textarea>
+              <input id="contact-me-form-submit" type="submit">
+            </div>
+          </div>
+
+        </div>
+
+        <footer>
+
+          <a href="#" class="footer-top">
+            <span class="icon-keyboard_arrow_up"></span>
+            <span>Back to Top</span>
+          </a>
+
+          <div class="footer-bottom">
+            <a href="#">Site Map</a>
+          </div>
+        </footer>
+
+      </div>
+
     </div>
   </body>
 </html>

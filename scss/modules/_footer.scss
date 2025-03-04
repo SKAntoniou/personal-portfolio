@@ -1,0 +1,9 @@
+.footer-top {
+  @extend %flex-column;
+  @include arrows-styling(up);
+}
+
+.footer-bottom {
+  float: right;
+  margin: 5px;
+}

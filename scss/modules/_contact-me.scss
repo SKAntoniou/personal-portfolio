@@ -1,4 +1,9 @@
 .contact-me {
+  flex: 1 1 90%;
+  @extend %flex-column;
+}
+
+.contact-me-container {
   display: grid;
   gap: $grid-gap-padding;
   grid-template-columns: 1fr;
@@ -13,7 +18,7 @@
 .contact-me-form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $grid-gap-padding;
+  gap: calc(#{$grid-gap-padding} / 2);
   @include mq(m) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -25,11 +30,11 @@
   }
 }
 
-[id^="contact-me-"] {
+[id^="contact-me-form-"] {
   width: 100%;
   grid-column: 1 / -1;
 }
-#contact-me-name- {
+#contact-me-form-name- {
   @include mq(m) {
     &first {
       grid-column: 1 / 2;
@@ -53,16 +58,14 @@
   }
 }
 
-
-// #contact-me-name- {
-//   &first, &last {
-//     @include mq(xl) {
-//       width: calc(50% - (#{$grid-gap-padding} / 2));
-//     }
-//   }
-//   &last {
-//     @include mq(xl) {
-//       margin-left: $grid-gap-padding;
-//     }
-//   }
-// }
+.contact-me-info {
+  h2 {
+    font-weight: $font-w-bold;
+    font-size: 2rem;
+  }
+  @extend %a-hover-underline;
+  a {
+    font-size: 1.3rem;
+    font-weight: $font-w-bold;
+  }
+}

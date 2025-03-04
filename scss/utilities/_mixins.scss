@@ -40,6 +40,15 @@
   }
 }
 
+// Arrow and label styling
+@mixin arrows-styling($arrow-direction) {
+  font-weight: $font-w-bold;
+  font-size: 1.2rem;
+  .icon-keyboard_arrow_#{$arrow-direction} {
+    font-size: 3rem;
+  }
+}
+
 // Generate modifier color classes
 
 

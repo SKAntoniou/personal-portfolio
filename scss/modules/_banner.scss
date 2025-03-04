@@ -5,6 +5,7 @@
   background-size: cover;
   background-position: center;
   // Layout
+  height: 100vh;
   @extend %flex-column;
 
   // Text formating
@@ -26,9 +27,5 @@
 .hint-scroll-down {
   flex: 1 1 10%;
   @extend %flex-column;
-  font-weight: $font-w-bold;
-  font-size: 1.2rem;
-  .icon-keyboard_arrow_down {
-    font-size: 3rem;
-  }
+  @include arrows-styling(down);
 }

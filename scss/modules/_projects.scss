@@ -1,9 +1,11 @@
 .projects {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $grid-gap-padding;
+  column-gap: $grid-gap-padding;
+  row-gap: calc(#{$grid-gap-padding} * 2);
   margin-top: 30px;
   margin-bottom: 30px;
+  overflow-y: hidden;
   @include mq(s) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -15,9 +17,11 @@
 .project-item {
   display: flex;
   flex-direction: column;
-
   img {
     width: 100%;
     aspect-ratio: 4 / 3;
+  }
+  span {
+    margin-left: 0.25rem;
   }
 }
