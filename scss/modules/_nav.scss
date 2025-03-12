@@ -4,12 +4,13 @@
 
 // Page Layout
 nav {
+  position: fixed;
+  width: $sidebar-width-site-nav;
+  height: 100vh;
   // Container Styling
   background-image: $background-noise;
   background-color: palette(darkmode, palette, secondary);
   border-right: 2px solid palette(darkmode, palette, tertiary);
-  // Content Styling
-  text-align: center;
 }
 
 .avatar {
@@ -21,12 +22,45 @@ nav {
 }
 
 .nav-list {
-  padding: 2rem;
-  padding-bottom: 0;
+  justify-content: center;
+  padding: 2rem 0;
+  margin: 0 2.2rem;
 
-  li {
-    margin: 1.5rem;
+  // Local Variables
+  $padding-total: 1rem;
+  $padding-start-end: calc(#{$padding-total} / 2);
+  $margin-between-elements: calc(#{$padding-total} - #{$padding-start-end});
+  > li > a {
+    display: inline-block;
     font-size: 1.2rem;
+
+    // Container margins
+    margin: $margin-between-elements 0;
+  }
+  // nav-sublist has to be nested to use local variables.
+  .nav-sublist {
+    li {
+      // Local Variables
+      $indent-spacing: 1rem;
+      $indent-guide-spacing: 0.1rem;
+      // Container Styling
+      display: inline-block;
+      padding: $padding-total;
+      padding-bottom: 0;
+      // Text Styling
+      font-size: 1.1rem;
+      // Indentation Guides
+      border-left: 2px solid palette(darkmode,palette,accent);
+      padding-left: calc(#{$indent-spacing} - #{$indent-guide-spacing});
+      margin-left: $indent-guide-spacing;
+
+      &:first-child {
+        padding-top: $padding-start-end; 
+      }
+      &:last-child {
+        padding-bottom: $padding-start-end; 
+      }
+    }
   }
 }
 
