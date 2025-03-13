@@ -6,9 +6,56 @@
   font-family: $font-family--primary;
   font-size: 1rem;
   font-weight: $font-w-normal;
-  color: white;
   letter-spacing: 0.1rem;
   box-sizing: border-box;
+
+  // Colour profiles - light
+  --colour-base: #{palette(lightmode,palette,base)};
+  --colour-secondary: #{palette(lightmode,palette,secondary)};
+  --colour-tertiary: #{palette(lightmode,palette,tertiary)};
+  --colour-accent: #{palette(lightmode,palette,accent)};
+  --colour-text-base: #{palette(lightmode,text,base)};
+  --colour-text-placeholder:  #{palette(lightmode,text,placeholder)};
+  --colour-filter-brightness: #{palette(lightmode,filter,brightness)};
+
+  // Colouring
+  color: var(--colour-text-base);
+}
+// Colour profiles - dark
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colour-base: #{palette(darkmode,palette,base)};
+    --colour-secondary: #{palette(darkmode,palette,secondary)};
+    --colour-tertiary: #{palette(darkmode,palette,tertiary)};
+    --colour-accent: #{palette(darkmode,palette,accent)};
+    --colour-text-base: #{palette(darkmode,text,base)};
+    --colour-text-placeholder:  #{palette(darkmode,text,placeholder)};
+    --colour-filter-brightness: #{palette(darkmode,filter,brightness)};
+  }
+}
+// Light/Dark switcher
+html {
+  color-scheme: dark light;
+}
+[data-theme="light"] {
+  color-scheme: light;
+  --colour-base: #{palette(lightmode,palette,base)};
+  --colour-secondary: #{palette(lightmode,palette,secondary)};
+  --colour-tertiary: #{palette(lightmode,palette,tertiary)};
+  --colour-accent: #{palette(lightmode,palette,accent)};
+  --colour-text-base: #{palette(lightmode,text,base)};
+  --colour-text-placeholder:  #{palette(lightmode,text,placeholder)};
+  --colour-filter-brightness: #{palette(lightmode,filter,brightness)};
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --colour-base: #{palette(darkmode,palette,base)};
+  --colour-secondary: #{palette(darkmode,palette,secondary)};
+  --colour-tertiary: #{palette(darkmode,palette,tertiary)};
+  --colour-accent: #{palette(darkmode,palette,accent)};
+  --colour-text-base: #{palette(darkmode,text,base)};
+  --colour-text-placeholder:  #{palette(darkmode,text,placeholder)};
+  --colour-filter-brightness: #{palette(darkmode,filter,brightness)};
 }
 
 *, *:before, *:after {
@@ -17,7 +64,7 @@
 
 body {
   background-image: $background-noise;
-  background-color: palette(darkmode, palette, base);
+  background-color: var(--colour-base);
 }
 
 // Lists
@@ -33,7 +80,7 @@ a {
   text-decoration: inherit;
   border-bottom: 1px solid transparent;
   &:hover {
-    border-bottom: 1px solid palette(darkmode, palette, accent);
+    border-bottom: var(--colour-accent);
   }
 }
 

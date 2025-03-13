@@ -5,7 +5,7 @@
 @mixin hamburger-button($icon-size, $icon-thickness) {
   width: $icon-size;
   height: $icon-thickness;
-  background-color: white;
+  background-color: var(--colour-text-base);;
 }
 .hamburger-button {
   // Local Variables & Calculations

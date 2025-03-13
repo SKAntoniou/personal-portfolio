@@ -9,13 +9,13 @@ nav {
   height: 100vh;
   // Container Styling
   background-image: $background-noise;
-  background-color: palette(darkmode, palette, secondary);
-  border-right: 2px solid palette(darkmode, palette, tertiary);
+  background-color: var(--colour-secondary);
+  border-right: 2px solid var(--colour-tertiary);
 }
 
 .avatar {
   // Container Styling
-  border-bottom: 2px solid palette(darkmode, palette, tertiary);
+  border-bottom: 2px solid var(--colour-tertiary);
   // Content Styling
   font-size: 3rem;
   padding: 2rem;
@@ -50,7 +50,7 @@ nav {
       // Text Styling
       font-size: 1.1rem;
       // Indentation Guides
-      border-left: 2px solid palette(darkmode,palette,accent);
+      border-left: 2px solid var(--colour-accent);
       padding-left: calc(#{$indent-spacing} - #{$indent-guide-spacing});
       margin-left: $indent-guide-spacing;
 
@@ -70,7 +70,7 @@ nav {
   display: flex;
   justify-content: space-around;
   a:hover {
-    color: palette(darkmode, palette, accent);
+    color: var(--colour-accent);
     border: none;
   }
 }
