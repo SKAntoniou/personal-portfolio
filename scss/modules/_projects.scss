@@ -51,6 +51,7 @@ $projects-grid-total-height: calc(
     display: inline-block;
   }
   // Change this with javascript to be an active class etc...
+  // Also make the hover add a pseudoclass element to join to the preview side. 
   border: 0;
   &:hover {
     background-image: $background-noise;

@@ -10,4 +10,34 @@
     display: none;
   }
 }
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    margin: 1rem 0;
+    margin-left: 2rem;
+    font-size: 2.5rem;
+  }
+}
+
+// Light/Dark Mode Toggle in Header
+.switch-toggle {
+  font-size: 1.5rem;
+}
+.switch-candy {
+  a {
+    background-color: var(--colour-accent);
+  }
+  label, a{
+    outline: none;
+    &:focus-visible, &:focus{
+      outline: none;
+    }
+  }
+}
+
+
+
+
 

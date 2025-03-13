@@ -33,6 +33,21 @@
   @extend %icons;
 }
 
+.icon-laptop:before {
+  content: "\e909";
+}
+.icon-sun:before {
+  content: "\e90a";
+}
+.icon-moon:before {
+  content: "\e90b";
+}
+.icon-sun1:before {
+  content: "\e90c";
+}
+.icon-moon1:before {
+  content: "\e90d";
+}
 .icon-keyboard_arrow_down:before {
   content: "\e901";
 }
