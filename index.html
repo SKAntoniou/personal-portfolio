@@ -8,56 +8,61 @@
   </head>
   <body>
 
-    <nav>
-      <div class="avatar">SKA</div>
-      <ul class="nav-list">
-        <li><a href="#">Home</a>
-          <ul class="nav-sublist">
-            <li><a href="#">About Me</a></li>
-            <li><a href="#projects-section">My Portfolio</a></li>
-            <li><a href="#contact-me-section">Contact Me</a></li>
-          </ul>
-        </li>
-        <li><a href="./coding-examples.html">Coding Examples</a></li>
-        <li><a href="./scs-scheme.html">SCS Scheme</a></li>
+    <header class="container">
 
-      </ul>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/skantoniou/" target="_blank" class="icon-linkedin"></a>
-        <a href="https://github.com/SKAntoniou" target="_blank" class="icon-github"></a>
+      <div class="header-left">
+        <div class="hamburger-container" id="sidenav-toggle">
+          <span class="hamburger-button"></span>
+        </div>
+        <h2>SKA</h2>
+      </div>
+
+      <div class="switch-toggle switch-3 switch-candy">
+
+        <input id="toggle-light" name="state-d" type="radio"/>
+        <label for="toggle-light" onclick="">
+          <span class="icon-sun"></span>
+        </label>
+
+        <input id="toggle-system" name="state-d" type="radio" checked="checked" />
+        <label for="toggle-system" onclick="">
+          <span class="icon-laptop"></span>
+        </label>
+
+        <input id="toggle-dark" name="state-d" type="radio"/>
+        <label for="toggle-dark" onclick="">
+          <span class="icon-moon"></span>
+        </label>
+
+        <a></a>
+      </div>
+
+    </header>
+
+    <nav>
+      <div class="nav-wrapper">
+        <div class="avatar">SKA</div>
+        
+        <ul class="nav-list">
+          <li><a href="#">Home</a>
+            <ul class="nav-sublist">
+              <li><a href="#">About Me</a></li>
+              <li><a href="#projects-section">My Portfolio</a></li>
+              <li><a href="#contact-me-section">Contact Me</a></li>
+            </ul>
+          </li>
+          <li><a href="./coding-examples.html">Coding Examples</a></li>
+          <li><a href="./scs-scheme.html">SCS Scheme</a></li>
+        </ul>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/skantoniou/" target="_blank" class="icon-linkedin"></a>
+          <a href="https://github.com/SKAntoniou" target="_blank" class="icon-github"></a>
+        </div>
       </div>
     </nav>
 
     <div class="content-area">
-
-      <header class="container">
-        
-        <div class="header-left">
-          <span class="hamburger-button"></span>
-          <h2>SKA</h2>
-        </div>
-
-        <div class="switch-toggle switch-3 switch-candy">
-
-          <input id="toggle-light" name="state-d" type="radio" checked="" />
-          <label for="toggle-light" onclick="">
-            <span class="icon-sun"></span>
-          </label>
-
-          <input id="toggle-system" name="state-d" type="radio" checked="checked" />
-          <label for="toggle-system" onclick="">
-            <span class="icon-laptop"></span>
-          </label>
-
-          <input id="toggle-dark" name="state-d" type="radio" checked="" />
-          <label for="toggle-dark" onclick="">
-            <span class="icon-moon"></span>
-          </label>
-
-          <a></a>
-        </div>
-
-      </header>
   
       <div class="fullscreen-page">
         <div class="banner">
@@ -83,97 +88,84 @@
             <div class="project-items">
 
               <a class="project-item" href="./netmatters-homepage/index.html" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg " alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Netmatters Homepage</h3>
-                    <p>Demo commercial website</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg " alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Netmatters Homepage</h3>
+                  <p>Demo commercial website</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 2</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 2</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 3</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 3</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 4</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 4</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 5</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 5</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 6</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 6</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
               <a class="project-item" href="#" target="_blank">
-                <div class="project-item-background">
-                  <img src="img/800x600.svg" alt="placeholder">
-                  <div class="project-item-text">
-                    <h3>Project 7</h3>
-                    <p>This is a placeholder</p>
-                  </div>
-                  <div class="project-item-tag">
-                    <span class="tag-web"></span>
-                  </div>
+                <img src="img/800x600.svg" alt="placeholder">
+                <div class="project-item-text">
+                  <h3>Project 7</h3>
+                  <p>This is a placeholder</p>
+                </div>
+                <div class="project-item-tag">
+                  <span class="tag-web"></span>
                 </div>
               </a>
 
             </div>
+
 
             <div class="project-items-footer">
               <span>See more:</span>
@@ -247,5 +239,9 @@
       </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

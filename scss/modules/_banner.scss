@@ -5,7 +5,10 @@
   background-size: cover;
   background-position: center;
   // Layout
-  height: 100vh;
+  height: $content-area-height;
+  @include mq(l) {
+    height: 100vh;
+  }
   @extend %flex-column;
 
   // Text formating

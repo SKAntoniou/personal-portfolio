@@ -3,29 +3,69 @@
 // ==========================================================================
 
 body {
+  // Used only in javascript
+  --width-sidebar: $sidebar-width-site-nav;
+
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: $header-height auto;
+  grid-template-areas: 
+    " header "
+    " main ";
   @include mq(l) {
     grid-template-columns: $sidebar-width-site-nav auto;
-    > .content-area {
-      grid-column: 2 / 3;
-    }
+    grid-template-rows: auto;
+    grid-template-areas: 
+    " nav main ";
   }
+}
+.content-area {
+  grid-area: main;
 }
 
 nav {
+ 
   // Layout
+  position: fixed;
+  z-index: 1;
+  height: $content-area-height;
+  left: 0;
+  bottom: 0;
+  @include mq(l){
+    width: $sidebar-width-site-nav;
+    height: 100vh;
+    transition: width 0s;
+  }
+
+  // Parent Layout
+  grid-area: nav;
+
+  // Container Properties
+  display: flex;
+  flex-direction: column;
+
+  // Mobile Toggle Properties
+  width: 0px;
+  transition: width 0.5s ease;
+  overflow-x: hidden;
+
+  &.nav-visible {
+    width: $sidebar-width-site-nav;
+    transition: width 0.5s ease;
+  }
+}
+.avatar {
   display: none;
   @include mq(l){
-    display: flex;
-    flex-direction: column;
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
+    display: block;
   }
 }
 
 .fullscreen-page {
-  min-height: 100vh;
+  min-height: $content-area-height;
+  @include mq(l) {
+    min-height: 100vh;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;

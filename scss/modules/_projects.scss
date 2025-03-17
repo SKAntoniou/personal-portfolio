@@ -5,26 +5,35 @@
   margin-bottom: 2rem;
 }
 
-// Main container
-.projects { 
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-bottom: 4rem;
-  @include mq(m) {
-    grid-template-columns: 3fr 2fr;
-  }
-}
 
 // Variables for local calculations
 $projects-items-row-height: 6rem;
 $projects-items-row-gap: $grid-gap-padding-small;
 $projects-items-rows: 7;
 $projects-items-footer-height: 3rem;
+$projects-preview-padding: 15px;
 // Calculation based on variables above
 $projects-grid-total-height: calc(
   ((#{$projects-items-row-height} + #{$projects-items-row-gap}) * #{$projects-items-rows}) +
   #{$projects-items-footer-height}
 );
+// Main container
+.projects { 
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: $grid-gap-padding-small;
+  margin-bottom: 4rem;
+  height: $projects-grid-total-height;
+  .project-previews {
+    display: none;
+    @include mq(m) {
+      display: block;
+    }
+  }
+  @include mq(m) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
 // List of projects (Left column) 
 .project-items {
   display: grid;
@@ -35,14 +44,10 @@ $projects-grid-total-height: calc(
 // Individual Project Small preview
 .project-item {
   display: flex;
+  width: 100%;
   padding: 0;
-  &-background {
-    display: flex;
-    width: 100%;
-    margin-right: $grid-gap-padding-small;
-    background-image: $background-noise;
-    background-color: var(--colour-secondary);
-  }
+  background-image: $background-noise;
+  background-color: var(--colour-secondary);
   img {
     height: 100%;
     display: inline-block;
@@ -83,7 +88,6 @@ $projects-grid-total-height: calc(
   align-items: center;
   margin-top: $grid-gap-padding-small;
   height: $projects-items-footer-height;
-  margin-right: $grid-gap-padding-small;
   background-image: $background-noise;
   background-color: var(--colour-secondary);
   border-bottom-right-radius: $border-radius-std;
@@ -98,14 +102,16 @@ $projects-grid-total-height: calc(
 }
 // Individual project large preview
 .project-preview {
+  display: flex;
+  flex-direction: column;
   background-image: $background-noise;
   background-color: var(--colour-tertiary);
   border-radius: $border-radius-std;
-  max-height: $projects-grid-total-height;
+  height: $projects-grid-total-height;
   &:first-child {
     border-top-left-radius: 0;
   }
-  padding: $global-padding-small;
+  padding: $projects-preview-padding;
 }
 .project-preview-text {
   margin-bottom: 0.5rem;
@@ -119,7 +125,7 @@ $projects-grid-total-height: calc(
   }
 }
 .project-preview-image-container {
-  box-sizing: content-box;
+  flex: 1 0 ;
   overflow-y: hidden;
 }
 .img-project-preview-long {

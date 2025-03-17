@@ -12,6 +12,12 @@
   }
 }
 
+// Calculate rem values
+@function rem($target, $context: $base__font-size) {
+	@return ($target / $context) * 1rem;
+}
+
+
 // Colour palette call
 @function palette($palette, $catagory, $shade: base, $modifier: base) {
   // Tests as standard errors are not useful
