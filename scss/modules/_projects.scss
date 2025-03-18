@@ -48,6 +48,7 @@ $projects-grid-total-height: calc(
   padding: 0;
   background-image: $background-noise;
   background-color: var(--colour-secondary);
+  position: relative;
   img {
     height: 100%;
     display: inline-block;
@@ -55,14 +56,7 @@ $projects-grid-total-height: calc(
   &-text {
     display: inline-block;
   }
-  // Change this with javascript to be an active class etc...
-  // Also make the hover add a pseudoclass element to join to the preview side. 
   border: 0;
-  &:hover {
-    background-image: $background-noise;
-    background-color: var(--colour-tertiary);
-    border: 0;
-  }
 }
 .project-item-text {
   padding: 0.8rem;
@@ -102,7 +96,7 @@ $projects-grid-total-height: calc(
 }
 // Individual project large preview
 .project-preview {
-  display: flex;
+  display: none;
   flex-direction: column;
   background-image: $background-noise;
   background-color: var(--colour-tertiary);
@@ -134,4 +128,24 @@ $projects-grid-total-height: calc(
 .img-project-preview-short {
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+// Class to add in with javascript
+.project-active {
+  &.project-item {
+    background-image: $background-noise;
+    background-color: var(--colour-tertiary);
+    &::after {
+      content:"";
+      width: $grid-gap-padding-small;
+      height: $projects-items-row-height;
+      position: absolute;
+      right: calc(-1 * #{$grid-gap-padding-small});
+      background-image: $background-noise;
+      background-color: var(--colour-tertiary);
+    }
+  }
+  &.project-preview {
+    display: flex;
+  }
 }

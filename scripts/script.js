@@ -51,48 +51,30 @@ contactFormEventsToWatch.forEach( (event) => {
 
     field.addEventListener(event, () => {
       if (field.value === '') {
-        if (!field.classList.contains('contact-me-required-missing')) {
-          field.classList.add("contact-me-required-missing");
-        }
+        field.classList.add("contact-me-required-missing");
         field.isVerified = false;
-        if (!contactFormSubmitButton.disabled) {
-          contactFormSubmitButton.setAttribute('disabled','true');
-        }
+        contactFormSubmitButton.setAttribute('disabled','true');
       } else {
-        if (field.classList.contains('contact-me-required-missing')) {
-          field.classList.remove("contact-me-required-missing");
-        }
+        field.classList.remove("contact-me-required-missing");
         field.isVerified = true;
         if (verifyFormElements(contactFormAllFieldsToVerify)) {
-          if (contactFormSubmitButton.disabled) {
-            contactFormSubmitButton.removeAttribute('disabled');
-          }
+          contactFormSubmitButton.removeAttribute('disabled');
         } else {
-          if (!contactFormSubmitButton.disabled) {
-            contactFormSubmitButton.setAttribute('disabled','true');
-          }
+          contactFormSubmitButton.setAttribute('disabled','true');
         }
-
       }
     });
-
   });
 
   const emailRegex = /^\S+@\S+\.\S+$/;
 
   contactFormEmail.addEventListener(event, () => {
     if (!emailRegex.test(contactFormEmail.value.toLowerCase())) {
-      if (!contactFormEmail.classList.contains('contact-me-required-missing')) {
-        contactFormEmail.classList.add("contact-me-required-missing");
-      }
+      contactFormEmail.classList.add("contact-me-required-missing");
       contactFormEmail.isVerified = false;
-      if (!contactFormSubmitButton.disabled) {
-        contactFormSubmitButton.setAttribute('disabled','true');
-      }
+      contactFormSubmitButton.setAttribute('disabled','true');
     } else {
-      if (contactFormEmail.classList.contains('contact-me-required-missing')) {
-        contactFormEmail.classList.remove("contact-me-required-missing");
-      }
+      contactFormEmail.classList.remove("contact-me-required-missing");
       contactFormEmail.isVerified = true;
       if (verifyFormElements(contactFormAllFieldsToVerify)) {
         if (contactFormSubmitButton.disabled) {
@@ -104,9 +86,7 @@ contactFormEventsToWatch.forEach( (event) => {
         }
       }
     }
-
   });
-
 });
 
 function verifyFormElements(array) {
@@ -139,3 +119,22 @@ lightDarkToggle.addEventListener("change", () => {
 
 // Projects Hover Effect
 const projectItems = document.getElementsByClassName('project-item');
+const projectPreviews = document.getElementsByClassName('project-preview');
+
+// Default setting
+projectItems[0].classList.add("project-active");
+projectPreviews[0].classList.add("project-active");
+
+// Event listeners on all of them
+for (let i = 0, j = projectItems.length; i < j; i++) {
+  projectItems[i].addEventListener("mouseover", () => {
+    projectItems[i].classList.add("project-active");
+    projectPreviews[i].classList.add("project-active");
+    for (let k = 0, l = projectItems.length; k < l; k++) {
+      if ( k !== i) {
+        projectItems[k].classList.remove("project-active");
+        projectPreviews[k].classList.remove("project-active");
+      }
+    }
+  });
+}
