@@ -24,26 +24,26 @@ body > header {
   }
 }
 
-// Light/Dark Mode Toggle in Header
-.switch-toggle {
+// Light/Dark Mode Toggle in Header - Following the same SCSS formatting was made in.
+.switch-toggle.switch-candy,
+.switch-light.switch-candy > span {
+  background-image: $background-noise;
+  background-color: var(--colour-base);
+}
+.switch-light.switch-candy span span,
+.switch-light.switch-candy input:checked ~ span span:first-child,
+.switch-toggle.switch-candy label {
+  color: var(--colour-text-base);
   font-size: 1.5rem;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px var(--colour-text-shadow);
 }
-.switch-candy {
-  label {
-    background-image: $background-noise;
-  }
-  a {
-    background-color: var(--colour-accent);
-  }
-  label, a{
-    outline: none;
-    &:focus-visible, &:focus{
-      outline: none;
-    }
-  }
+.switch-light.switch-candy input ~ span span:first-child,
+.switch-light.switch-candy input:checked ~ span span:nth-child(2),
+.switch-candy input:checked + label {
+  color: var(--colour-text-dark);
 }
-
-
-
-
-
+.switch-candy a {
+  border-color: var(--colour-text-dark);
+  background-color: var(--colour-accent);
+}

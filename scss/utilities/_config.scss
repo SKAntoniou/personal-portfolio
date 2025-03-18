@@ -40,6 +40,8 @@ $color-palettes: (
     text: (
       base: #0C0C0C,
       placeholder: rgba(12, 12, 12, 0.75), // This is the same colour as base but 0.75 oppacity
+      dark: #0C0C0C, // This is for anything with bright colour backgrounds
+      shadow: #f9e1bd, 
     ),
     filter: ( // This is mainly for banner image
       brightness: rgba(255, 255, 255, 0.2)
@@ -55,6 +57,8 @@ $color-palettes: (
     text: (
       base: #FEF3E2,
       placeholder:  rgba(254, 243, 226, 0.75), // This is the same colour as base but 0.75 oppacity
+      dark: #0C0C0C, // This is for anything with bright colour backgrounds
+      shadow: #191b1e,
     ),
     filter: ( // This is mainly for banner image
       brightness: rgba(0, 0, 0, 0.5),
