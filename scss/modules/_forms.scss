@@ -2,13 +2,16 @@
 // Form Elements
 // ==========================================================================
 
-[id^="contact-me-form-"] {
+.contact-me-form-input, #contact-me-form-submit {
   display: flex;
   border: 2px solid var(--colour-accent);
   background-image: $background-noise;
   background-color: var(--colour-secondary);
   padding: 15px;
   border-radius: 5px;
+}
+.contact-me-required-missing {
+  background-color: var(--colour-tertiary);
 }
 .contact-me-form {
   > * {
@@ -31,5 +34,12 @@
   &:hover {
     transition: .2s ease;
     background-color: var(--colour-accent);
+  }
+  &:disabled {
+    background-color: var(--colour-secondary);
+    &:hover {
+      transition: 0;
+      background-color: var(--colour-secondary);
+    }
   }
 }

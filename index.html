@@ -17,7 +17,7 @@
         <h2>SKA</h2>
       </div>
 
-      <div class="switch-toggle switch-3 switch-candy">
+      <div id="light-dark-toggle" class="switch-toggle switch-3 switch-candy">
 
         <input id="toggle-light" name="state-d" type="radio"/>
         <label for="toggle-light" onclick="">
@@ -42,7 +42,7 @@
     <nav>
       <div class="nav-wrapper">
         <div class="avatar">SKA</div>
-        
+
         <ul class="nav-list">
           <li><a href="#">Home</a>
             <ul class="nav-sublist">
@@ -68,7 +68,7 @@
         <div class="banner">
           <header>
             <h1>My Name is Stephan Antoniou</h1>
-            <p>I'm a Web Developer</p>
+            <p id="typewriter-banner"></p>
           </header>
           <div class="hint-scroll-down">
             <div>Scroll Down</div>
@@ -213,12 +213,12 @@
             </div>
 
             <div class="contact-me-form">
-              <input id="contact-me-form-name-first" type="text" placeholder="First Name*">
-              <input id="contact-me-form-name-last" type="text" placeholder="Last Name*">
-              <input id="contact-me-form-email" type="email" placeholder="Email Address*">
-              <input id="contact-me-form-subject" type="text" placeholder="Subject">
-              <textarea id="contact-me-form-message" placeholder="Message"></textarea>
-              <input id="contact-me-form-submit" type="submit">
+              <input class="contact-me-form-input" id="contact-me-form-name-first" type="text" placeholder="First Name*">
+              <input class="contact-me-form-input" id="contact-me-form-name-last" type="text" placeholder="Last Name*">
+              <input class="contact-me-form-input" id="contact-me-form-email" type="email" placeholder="Email Address*">
+              <input class="contact-me-form-input" id="contact-me-form-subject" type="text" placeholder="Subject">
+              <textarea class="contact-me-form-input" id="contact-me-form-message" placeholder="Message"></textarea>
+              <input id="contact-me-form-submit" type="submit" disabled>
             </div>
           </div>
 
@@ -239,9 +239,6 @@
       </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
