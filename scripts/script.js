@@ -105,7 +105,6 @@ lightDarkToggle.addEventListener("change", () => {
     if (currentValue.checked) {
       if (currentValue.id === 'toggle-light') {
         document.documentElement.setAttribute("data-theme", "light");
-        // lightDarkToggle.classList.add(swit)
         break;
       } else if (currentValue.id === 'toggle-dark') {
         document.documentElement.setAttribute("data-theme", "dark");
