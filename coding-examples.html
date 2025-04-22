@@ -7,18 +7,59 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
+    <header class="container">
+
+      <div class="header-left">
+        <div class="hamburger-container" id="sidenav-toggle">
+          <span class="hamburger-button"></span>
+        </div>
+        <h2>SKA</h2>
+      </div>
+      <div class="header-right">
+        <div id="light-dark-toggle" class="switch-toggle switch-3 switch-candy">
+
+          <input id="toggle-light" name="state-d" type="radio">
+          <label for="toggle-light" onclick="">
+            <span class="icon-sun"></span>
+          </label>
+  
+          <input id="toggle-system" name="state-d" type="radio" checked="checked" >
+          <label for="toggle-system" onclick="">
+            <span class="icon-laptop"></span>
+          </label>
+  
+          <input id="toggle-dark" name="state-d" type="radio">
+          <label for="toggle-dark" onclick="">
+            <span class="icon-moon"></span>
+          </label>
+  
+          <a></a>
+        </div>
+      </div>
+
+    </header>
+
     <nav>
-      <div class="avatar">SKA</div>
-      <ul class="nav-list">
-        <li><a href="./index.html#">About Me</a></li>
-        <li><a href="./index.html#projects-section">My Portfolio</a></li>
-        <li><a href="#">Coding Examples</a></li>
-        <li><a href="./scs-scheme.html">SCS Scheme</a></li>
-        <li><a href="./index.html#contact-me-section">Contact Me</a></li>
-      </ul>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/skantoniou/" target="_blank" class="icon-linkedin"></a>
-        <a href="https://github.com/SKAntoniou" target="_blank" class="icon-github"></a>
+      <div class="nav-wrapper">
+        <div class="avatar">SKA</div>
+
+        <ul class="nav-list">
+          <li><a href="#">Home</a>
+            <ul class="nav-sublist">
+              <li><a href="./index.html#">About Me</a></li>
+              <li><a href="./index.html#projects-section">My Portfolio</a></li>
+              <li><a href="./index.html#contact-me-section">Contact Me</a></li>
+            </ul>
+          </li>
+          <li><a href="./coding-examples.html">Coding Examples</a></li>
+          <li><a href="./scs-scheme.html">SCS Scheme</a></li>
+        </ul>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/skantoniou/" target="_blank" class="icon-linkedin"></a>
+          <a href="https://github.com/SKAntoniou" target="_blank" class="icon-github"></a>
+        </div>
       </div>
     </nav>
 
