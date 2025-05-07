@@ -9,10 +9,11 @@
   background-color: var(--colour-secondary);
   padding: 15px;
   border-radius: 5px;
+  &.error {
+    background-color: var(--colour-tertiary);
+  }
 }
-.contact-me-required-missing {
-  background-color: var(--colour-tertiary);
-}
+
 .contact-me-form {
   > * {
     &, &:focus {

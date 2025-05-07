@@ -1,1 +1,3 @@
 personal-portfolio.code-workspace
+/vendor/
+.env

@@ -28,17 +28,8 @@
   letter-spacing: 0.1rem;
   box-sizing: border-box;
 
-  // Colour profiles - light
-  --colour-base: #{palette(lightmode,palette,base)};
-  --colour-secondary: #{palette(lightmode,palette,secondary)};
-  --colour-tertiary: #{palette(lightmode,palette,tertiary)};
-  --colour-accent: #{palette(lightmode,palette,accent)};
-  --colour-text-base: #{palette(lightmode,text,base)};
-  --colour-text-placeholder:  #{palette(lightmode,text,placeholder)};
-  --colour-text-dark: #{palette(lightmode,text,dark)};
-  --colour-text-shadow: #{palette(lightmode,text,shadow)};
-  --colour-filter-brightness: #{palette(lightmode,filter,brightness)};
-
+  // Light / Dark Mode
+  @include ldmode-colours("light");
 
   // Colouring
   color: var(--colour-text-base);
@@ -46,15 +37,7 @@
 // Colour profiles - dark
 @media (prefers-color-scheme: dark) {
   :root {
-    --colour-base: #{palette(darkmode,palette,base)};
-    --colour-secondary: #{palette(darkmode,palette,secondary)};
-    --colour-tertiary: #{palette(darkmode,palette,tertiary)};
-    --colour-accent: #{palette(darkmode,palette,accent)};
-    --colour-text-base: #{palette(darkmode,text,base)};
-    --colour-text-placeholder:  #{palette(darkmode,text,placeholder)};
-    --colour-text-dark: #{palette(darkmode,text,dark)};
-    --colour-text-shadow: #{palette(darkmode,text,shadow)};
-    --colour-filter-brightness: #{palette(darkmode,filter,brightness)};
+    @include ldmode-colours("dark");
   }
 }
 // Light/Dark switcher
@@ -64,29 +47,13 @@ html {
 [data-theme="light"] {
   color-scheme: light;
   :root {
-    --colour-base: #{palette(lightmode,palette,base)};
-    --colour-secondary: #{palette(lightmode,palette,secondary)};
-    --colour-tertiary: #{palette(lightmode,palette,tertiary)};
-    --colour-accent: #{palette(lightmode,palette,accent)};
-    --colour-text-base: #{palette(lightmode,text,base)};
-    --colour-text-placeholder:  #{palette(lightmode,text,placeholder)};
-    --colour-text-dark: #{palette(lightmode,text,dark)};
-    --colour-text-shadow: #{palette(lightmode,text,shadow)};
-    --colour-filter-brightness: #{palette(lightmode,filter,brightness)};
+    @include ldmode-colours("light");
   }
 }
 [data-theme="dark"] {
   color-scheme: dark;
   :root {
-    --colour-base: #{palette(darkmode,palette,base)};
-    --colour-secondary: #{palette(darkmode,palette,secondary)};
-    --colour-tertiary: #{palette(darkmode,palette,tertiary)};
-    --colour-accent: #{palette(darkmode,palette,accent)};
-    --colour-text-base: #{palette(darkmode,text,base)};
-    --colour-text-placeholder:  #{palette(darkmode,text,placeholder)};
-    --colour-text-dark: #{palette(darkmode,text,dark)};
-    --colour-text-shadow: #{palette(darkmode,text,shadow)};
-    --colour-filter-brightness: #{palette(darkmode,filter,brightness)};
+    @include ldmode-colours("dark");
   }
 }
 

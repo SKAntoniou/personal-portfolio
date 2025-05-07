@@ -52,18 +52,26 @@
   }
 }
 
-// Generate modifier color classes
+// Light & Dark Mode colouring
+@mixin ldmode-colours($mod) {
+  @if ($mod == 'light' or $mod == 'dark') {
+    $modmode: str-insert('mode', $mod, 0);
 
+    & {
+      --colour-base: #{palette($modmode,palette,base)};
+      --colour-secondary: #{palette($modmode,palette,secondary)};
+      --colour-tertiary: #{palette($modmode,palette,tertiary)};
+      --colour-accent: #{palette($modmode,palette,accent)};
+      --colour-text-base: #{palette($modmode,text,base)};
+      --colour-text-placeholder:  #{palette($modmode,text,placeholder)};
+      --colour-text-dark: #{palette($modmode,text,dark)};
+      --colour-text-shadow: #{palette($modmode,text,shadow)};
+      --colour-filter-brightness: #{palette($modmode,filter,brightness)};
+      --colour-status-success: #{palette($modmode, status, success)};
+      --colour-status-error: #{palette($modmode, status, error)};
+    }
 
-// Generating :before or :after pseudo-element shapes
-
-
-// Image replacement
-
-      
-// Adjacent sibling margins
-
-
-// Grid Columns
-     
-       
+  } @else {
+    @error "Light & Dark mode function has been passed in incorrectly. The only allowed arguments are 'light' or 'dark'."
+  }
+}

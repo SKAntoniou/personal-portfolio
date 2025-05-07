@@ -68,3 +68,17 @@
     font-weight: $font-w-bold;
   }
 }
+
+.contact-me-status {
+  &>div {
+    margin: calc(#{$grid-gap-padding} / 2) 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .sent {
+    background-color: var(--colour-status-success);
+  }
+  .error {
+    background-color: var(--colour-status-error);
+  }
+}

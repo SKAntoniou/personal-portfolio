@@ -45,15 +45,15 @@
         <div class="avatar">SKA</div>
 
         <ul class="nav-list">
-          <li><a href="#">Home</a>
+          <li><a href="/">Home</a>
             <ul class="nav-sublist">
-              <li><a href="./index.html#">About Me</a></li>
-              <li><a href="./index.html#projects-section">My Portfolio</a></li>
-              <li><a href="./index.html#contact-me-section">Contact Me</a></li>
+              <li><a href="/#">About Me</a></li>
+              <li><a href="/#projects-section">My Portfolio</a></li>
+              <li><a href="/#contact-me-section">Contact Me</a></li>
             </ul>
           </li>
-          <li><a href="./coding-examples.html">Coding Examples</a></li>
-          <li><a href="./scs-scheme.html">SCS Scheme</a></li>
+          <li><a href="/coding-examples">Coding Examples</a></li>
+          <li><a href="/scs-scheme">SCS Scheme</a></li>
         </ul>
 
         <div class="socials">
@@ -64,16 +64,4 @@
     </nav>
 
     <div class="content-area">
-
-      <div class="fullscreen-page">
-        <div class="container">
-          <h1>
-            Coming Soon...
-          </h1>
-        </div>
-      </div>
-
-    </div>
-    
-  </body>
-</html>
+  

@@ -45,6 +45,10 @@ $color-palettes: (
     ),
     filter: ( // This is mainly for banner image
       brightness: rgba(255, 255, 255, 0.2)
+    ),
+    status: (
+      success: #00C851,
+      error: #ff4444
     )
   ),
   darkmode: (
@@ -62,6 +66,10 @@ $color-palettes: (
     ),
     filter: ( // This is mainly for banner image
       brightness: rgba(0, 0, 0, 0.5),
+    ),
+    status: (
+      success: #007E33,
+      error: #CC0000
     )
   )
 );

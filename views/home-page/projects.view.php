@@ -1,0 +1,261 @@
+<div class="fullscreen-page" id="projects-section"> 
+  <div class="container">
+    <h2 class="projects-title">Portfolio</h2>
+  </div>
+
+  <div class="projects container">
+    <div>
+
+      <div class="project-items">
+
+        <a class="project-item" href="http://netmatters.stephan-antoniou.netmatters-scs.co.uk/" target="_blank">
+          <img src="./img/projects/netmatters-homepage/netmatters-homepage-top-of-screen.webp" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Netmatters Homepage</h3>
+            <p>Demo commercial website</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+        <a class="project-item" href="https://github.com/SKAntoniou/breaker" target="_blank">
+          <img src="./img/projects/breaker-c/breaker-running.webp" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Breaker</h3>
+            <p>Brute Force Cryptography Breaker</p>
+          </div>
+          <div class="project-item-tag">
+            
+          </div>
+        </a>
+
+        <a class="project-item" href="#" target="_blank">
+          <img src="img/800x600.svg" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Custom Graphics Card Cooling System</h3>
+            <p>Modified to Single-slot while improving performance</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+        <a class="project-item" href="#" target="_blank">
+          <img src="img/800x600.svg" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Home Lab</h3>
+            <p>Server automation and experimentation</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+        <a class="project-item" href="#" target="_blank">
+          <img src="img/800x600.svg" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Personal Site</h3>
+            <p>Personal portfolio and blog</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+        <a class="project-item" href="#" target="_blank">
+          <img src="img/800x600.svg" alt="placeholder">
+          <div class="project-item-text">
+            <h3>Battery Enclosure for Electric Powered Race Car</h3>
+            <p>Budget friendly, lightweight and safe battery enclosure</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+        <a class="project-item" href="#" target="_blank">
+          <img src="img/projects/js-array/js-array-desktop.png" alt="JavaScript Database Site Thumbnail">
+          <div class="project-item-text">
+            <h3>JavaScript Browser Database</h3>
+            <p>Using IndexedDB to store collections of images in browser storage.</p>
+          </div>
+          <div class="project-item-tag">
+            <span class="tag-web"></span>
+          </div>
+        </a>
+
+      </div>
+
+
+      <div class="project-items-footer">
+        <span>See more:</span>
+        <a class="btn-projects-page" href="#projects">All Projects</a>
+      </div>
+
+    </div>
+    <div class="project-previews">
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+          <span class="tag-html"></span>
+          <span class="tag-css"></span>
+          <span class="tag-sass"></span>
+          <span class="tag-javascript"></span>
+          <span class="jQuery"></span>
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Netmatters Homepage</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+            As part of the <a href="">Scion Scheme</a>, the task was to recreate the Netmatters homepage. This was designed with a mobile-first approach and utilised HTML, Sass/CSS & JavaScript to make a professional business homepage. 
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-long" src="./img/projects/netmatters-homepage/netmatters-homepage-fullscreen.webp" alt="Fullscreen preview of Netmatters website homepage.">   
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Breaker</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+            Coded in C, this will attempt to decrypt text cyphers. This is was inspired from the CIA Art project Kryptos, where part of the text is still unsolved more than 30 years after it’s creation. C was chosen for it’s simplicty and speed.
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-long" src="./img/projects/breaker-c/breaker-running.webp" alt="placeholder">
+        </div>
+      </div>
+      
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Custom Single Slot GPU</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+            This card primarily aims to do AV1 encoding, decoding, and transcoding. The other single-slot offerings on the market were too expensive for this use case. The end product was still six times cheaper than buying market offerings. 
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-short" src="https://placehold.co/600x400" alt="placeholder">
+          <img class="img-project-preview-short" src="img/800x600.svg" alt="placeholder">
+          <img class="img-project-preview-long" src="https://placehold.co/600x1000" alt="placeholder">   
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Home Lab</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+            This has expanded over the years. Currently, I run servers for many purposes: I test networks, automation, software, and operating systems. I deploy safe services for personal, friend, and family use. I have various hardware for testing, from Raspberry Pis and ESP32 Boards to AMD EPYC data centre CPUs.
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-short" src="https://placehold.co/600x400" alt="placeholder">
+          <img class="img-project-preview-short" src="img/800x600.svg" alt="placeholder">
+          <img class="img-project-preview-long" src="https://placehold.co/600x1000" alt="placeholder">   
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Project Template</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-short" src="https://placehold.co/600x400" alt="placeholder">
+          <img class="img-project-preview-short" src="img/800x600.svg" alt="placeholder">
+          <img class="img-project-preview-long" src="https://placehold.co/600x1000" alt="placeholder">   
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>Project Template</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-short" src="https://placehold.co/600x400" alt="placeholder">
+          <img class="img-project-preview-short" src="img/800x600.svg" alt="placeholder">
+          <img class="img-project-preview-long" src="https://placehold.co/600x1000" alt="placeholder">   
+        </div>
+      </div>
+
+      <div class="project-preview">
+        <div class="project-preview-tags">
+
+        </div>
+
+        <div class="project-preview-header">
+          <h3>JavaScript Browser Database</h3>
+          <a href="#" target="_blank">View Project<span class="icon-arrow_forward"></span></a>
+        </div>
+
+        <div class="project-preview-text">
+          <p>
+            This allows for persistent storage on the users' browser. For a companies, this allows for a potential free tier as the costs for serving this media would be minimal. The only verification is an email address as this is just an example. Realistically this would be behind some sort of verification.
+          </p>
+        </div>
+
+        <div class="project-preview-image-container">
+          <img class="img-project-preview-long" src="img/projects/js-array/js-array-mobile.png" alt="placeholder">
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>

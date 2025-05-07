@@ -34,69 +34,68 @@ const typewriterLocation = document.getElementById('typewriter-banner');
 }
 
 // Contact Form Validation
-const contactFormFirstName = document.getElementById( 'contact-me-form-name-first' );
-contactFormFirstName.isVerified = false;
-const contactFormLastName = document.getElementById( 'contact-me-form-name-last' );
-contactFormLastName.isVerified = false;
-const contactFormEmail = document.getElementById( 'contact-me-form-email' );
-contactFormEmail.isVerified = false;
-const contactFormSubmitButton = document.getElementById( 'contact-me-form-submit' );
-const contactFormEventsToWatch = ['focusout', 'change'];
-const contactFormBasicFieldsToWatch = [contactFormFirstName, contactFormLastName];
-const contactFormAllFieldsToVerify = [...contactFormBasicFieldsToWatch, contactFormEmail];
+const contactForm = document.querySelector("form");
+const requiredFields = contactForm.querySelectorAll(".required");
+const emailRegex = /^\S+@\S+\.\S+$/;
+requiredFields.forEach( (currentValue) => {
+  if (currentValue.type === 'text' || currentValue.nodeName === 'TEXTAREA') {
 
-contactFormEventsToWatch.forEach( (event) => {
-
-  contactFormBasicFieldsToWatch.forEach ( (field) => {
-
-    field.addEventListener(event, () => {
-      if (field.value === '') {
-        field.classList.add("contact-me-required-missing");
-        field.isVerified = false;
-        contactFormSubmitButton.setAttribute('disabled','true');
+    currentValue.addEventListener("focusout", () => {
+      if (currentValue.value === "") {
+        currentValue.classList.add("error");
       } else {
-        field.classList.remove("contact-me-required-missing");
-        field.isVerified = true;
-        if (verifyFormElements(contactFormAllFieldsToVerify)) {
-          contactFormSubmitButton.removeAttribute('disabled');
-        } else {
-          contactFormSubmitButton.setAttribute('disabled','true');
-        }
+        currentValue.classList.remove("error");
       }
     });
+
+  } else if (currentValue.type === 'email') {
+
+    currentValue.addEventListener("focusout", () => {
+      if (!emailRegex.test(currentValue.value.toLowerCase())) {
+        currentValue.classList.add("error");
+      } else {
+        currentValue.classList.remove("error");
+      }
+    });
+  }
+});
+
+// Form Submit
+contactForm.addEventListener("submit", event => {
+  let formValidArray = Array(requiredFields.length);
+  formValidArray.forEach( (currentValue) => {
+    currentValue = false;
   });
 
-  const emailRegex = /^\S+@\S+\.\S+$/;
-
-  contactFormEmail.addEventListener(event, () => {
-    if (!emailRegex.test(contactFormEmail.value.toLowerCase())) {
-      contactFormEmail.classList.add("contact-me-required-missing");
-      contactFormEmail.isVerified = false;
-      contactFormSubmitButton.setAttribute('disabled','true');
-    } else {
-      contactFormEmail.classList.remove("contact-me-required-missing");
-      contactFormEmail.isVerified = true;
-      if (verifyFormElements(contactFormAllFieldsToVerify)) {
-        if (contactFormSubmitButton.disabled) {
-          contactFormSubmitButton.removeAttribute('disabled');
-        }
+  requiredFields.forEach( (currentValue, index) => {
+    if (currentValue.type === 'text' || currentValue.nodeName === 'TEXTAREA') {
+      if (currentValue.value === "") {
+        currentValue.classList.add("error");
+        formValidArray[index] = false;
       } else {
-        if (!contactFormSubmitButton.disabled) {
-          contactFormSubmitButton.setAttribute('disabled','true');
-        }
+        formValidArray[index] = true;
+      }
+    } else if (currentValue.type === 'email') {
+      if (!emailRegex.test(currentValue.value.toLowerCase())) {
+        currentValue.classList.add("error");
+        formValidArray[index] = false;
+      } else {
+        formValidArray[index] = true;
       }
     }
   });
-});
 
-function verifyFormElements(array) {
-  for (let i = 0, length = array.length; i < length; i++) {
-    if (!array[i].isVerified) {
-      return false;
+  let formValidCount = 0;
+  formValidArray.forEach( (currentValue) => {
+    if (currentValue) {
+      formValidCount++;
     }
+  });
+  
+  if (formValidCount !== requiredFields.length) {
+    event.preventDefault();
   }
-  return true;
-}
+});
 
 // Light / Dark Mode Toggle
 const lightDarkToggle = document.getElementById('light-dark-toggle');
