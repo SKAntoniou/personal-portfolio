@@ -1,0 +1,64 @@
+// ============================================================
+// Global Personal Functions
+// ============================================================
+
+// External Imports
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "colors" as *;
+
+/// Z-Index Get Layer Value Function
+/// Z-Index is going to be stored in a Map so this will make it easier retrieving it.
+/// 
+/// Example: 
+/// .overlay {
+///   z-index: z(overlay);
+/// }
+@function z($key) {
+  @if map.has-key($z-layers, $key) {
+    @return map.get($z-layers, $key);
+  }
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+/// Flatten Arglist is for Sass lists that have brackets around them.
+@function flatten-arglist($args...) {
+  @if list.length($args) == 1 and (
+    meta.type-of(list.nth($keys, 1)) == 'arglist' or
+    meta.type-of(list.nth($keys, 1)) == 'list') 
+  {
+    @return nth($args, 1);
+  }
+  @return $args;
+}
+
+/// Return Key from specified nested map.
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Keys to test
+/// @return {Value} - Value at the end of Key link
+@function map-deep-get($map, $keys...) {
+  @if list.length($keys) == 1 and (
+    meta.type-of(list.nth($keys, 1)) == 'arglist' or
+    meta.type-of(list.nth($keys, 1)) == 'list') 
+    {
+    $keys: list.nth($keys, 1);
+  }
+
+  @each $key in $keys {
+    @if not map.has-key($map, $key) {
+      @error "No Value at end of key #{$key}";
+    }
+    $map: map.get($map, $key);
+  }
+  @return $map;
+}
+
+/// Return Colour from Colour Palette
+/// @param {Arglist} $keys - Keys to test
+/// @param {String} $modifier - Modifier to add output colour
+/// @return {Value} - Colour at the end of colour map.
+@function colours($keys...) {
+  @return map-deep-get($colour-palette, $keys);
+}

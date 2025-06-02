@@ -1,0 +1,13 @@
+/// Z-Index Layer Values
+/// All Z-Indexs used in this website with a few extras for Debugging
+/// Use in conjunction with the function z()
+/// 
+/// Example:
+/// .overlay {
+///   z-index: z(default);
+/// }
+$z-layers: (
+  debug-back: -99999,
+  default: 1,
+  debug-front: 99999,
+)

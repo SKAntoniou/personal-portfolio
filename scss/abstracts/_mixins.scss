@@ -1,0 +1,73 @@
+// ============================================================
+// Global Personal Mixins
+// ============================================================
+
+// Imports
+@use "sass:meta";
+@use "functions" as fn;
+
+/// Print Mixin
+/// Used for in conjunction with a map for file or scope specific styling.
+/// 
+/// Example 1:
+/// 
+/// In a _component.scss
+/// 
+/// @use 'abstracts';
+/// @use 'sass:map';
+/// 
+/// $configuration: (
+///   padding: 1em,
+///   margin: 0 1em,
+///   color: grey
+/// );
+/// 
+/// .element {
+///  @include print($configuration);
+///  &::before {
+///    background-color: map.get($configuration, color);
+///  }
+/// }
+/// 
+/// Example 2:
+/// Can just be used with an anonymous map
+/// 
+/// In a _component.scss
+/// @use 'abstracts';
+/// .element {
+///   @include print((
+///     margin: 0 auto,
+///     max-width: 50%,
+///     overflow: hidden
+///   ));
+/// }
+@mixin print($declarations) {
+  @each $property, $value in $declarations {
+    #{$property}: $value
+  }
+}
+
+/// Font Import Function
+/// This should be used in Base to import font and show and error if it doesn't work
+@mixin font-import($font-name) {
+  @if meta.variable-exists(font-name) {
+    @import url($font-name);
+  }
+  @else {
+    @warn "Font #{$font-name} variable was not found so it was not imported";
+  }
+}
+
+/// Light & Dark mode Mixin
+/// Used in base file to convert Sass Variables to CSS Variables.
+@mixin ldmode($mod) {
+  @if ($mod == 'light' or $mod == 'dark') {
+    // This part is for shared colours that do not change 
+    & {
+      --clr-primary: #{fn.colours(primary, 100)};
+    }
+
+  } @else {
+    @error "#{$mod} is not a Light/Dark mode option in the ldmode function. The only allowed arguments are 'light' or 'dark'."
+  }
+}

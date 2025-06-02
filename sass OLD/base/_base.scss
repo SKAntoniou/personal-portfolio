@@ -1,0 +1,78 @@
+@use "../utilities" as *;
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+:root {
+  font-family: $font-family--primary;
+  font-size: 1rem;
+  font-weight: $font-w-normal;
+  letter-spacing: 0.1rem;
+  box-sizing: border-box;
+
+  // Light / Dark Mode
+  @include ldmode-colours("light");
+
+  // Colouring
+  color: var(--colour-text-base);
+}
+// Colour profiles - dark
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include ldmode-colours("dark");
+  }
+}
+// Light/Dark switcher
+html {
+  color-scheme: dark light;
+}
+[data-theme="light"] {
+  color-scheme: light;
+  :root {
+    @include ldmode-colours("light");
+  }
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  :root {
+    @include ldmode-colours("dark");
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: $background-noise;
+  background-color: var(--colour-base);
+}
+
+// Lists
+ul {
+  margin: 0;
+  padding:0;
+  list-style-type: none;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: inherit;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: var(--colour-accent);
+  }
+}
+
+// Images
+
+
+// Form elements
+
+
+// Button
+
+
+// Layout
+

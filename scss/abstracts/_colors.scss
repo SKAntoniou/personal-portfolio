@@ -1,0 +1,46 @@
+/// Try HSL colours as it make the colours more consistant and will be easier to manipulate
+
+/// Main Colour Palette
+/// Colour Keys start at 100 which is the lightest variant
+/// Colour Keys end at 500 which is the darkest variant
+$colour-palette: (
+  primary: (
+    100: hsl(0, 0%, 100%),
+    200: hsl(0, 0%, 70%),
+    300: hsl(0, 0%, 50%),
+    400: hsl(0, 0%, 30%),
+    500: hsl(0, 0%, 14%),
+  ),
+  accent: (
+    100: hsl(21, 95%, 80%),
+    200: hsl(21, 95%, 70%),
+    300: hsl(21, 95%, 58%),
+    400: hsl(21, 95%, 48%),
+    500: hsl(21, 95%, 30%),
+  ),
+  error: (
+
+  ),
+  warning: (
+
+  ),
+  success: (
+
+  ),
+  
+);
+
+/// ldmode map is a light/dark mode reference to original colours in $colour-palette
+/// This is used to keep the orginal colours organised and allow for easy lookup from a mixin.
+$ldmode: (
+  light: (
+    primary: (primary, 100),
+    secondary: (primary, 200),
+    accent: (accent, 300),
+  ),
+  dark: (
+    primary: (primary, 400),
+    secondary: (primary, 500),
+    accent: (accent, 300),
+  )
+)

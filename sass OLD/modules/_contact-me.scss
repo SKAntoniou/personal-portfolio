@@ -1,0 +1,86 @@
+@use "../utilities" as *;
+
+.contact-me {
+  flex: 1 1 90%;
+  @extend %flex-column;
+}
+
+.contact-me-container {
+  display: grid;
+  gap: $grid-gap-padding;
+  grid-template-columns: 1fr;
+  @include mq(l) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(xl) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.contact-me-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(#{$grid-gap-padding} / 2);
+  @include mq(m) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(l) {
+    grid-template-columns: 1fr;
+  }
+  @include mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+[id^="contact-me-form-"] {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+#contact-me-form-name- {
+  @include mq(m) {
+    &first {
+      grid-column: 1 / 2;
+    }
+    &last {
+      grid-column: 2 / 3;
+    }
+  }
+  @include mq(l) {
+    &first, &last {
+      grid-column: 1 / -1;
+    }
+  }
+  @include mq(xl) {
+    &first {
+      grid-column: 1 / 2;
+    }
+    &last {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+.contact-me-info {
+  h2 {
+    font-weight: $font-w-bold;
+    font-size: 2rem;
+  }
+  a {
+    font-size: 1.3rem;
+    font-weight: $font-w-bold;
+  }
+}
+
+.contact-me-status {
+  &>div {
+    margin: calc(#{$grid-gap-padding} / 2) 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .sent {
+    background-color: var(--colour-status-success);
+  }
+  .error {
+    background-color: var(--colour-status-error);
+  }
+}

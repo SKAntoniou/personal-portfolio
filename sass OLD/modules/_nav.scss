@@ -1,0 +1,90 @@
+@use "../utilities" as *;
+
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+// Page sizing and layout is in container scss file.
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  // Container Styling
+  background-image: $background-noise;
+  background-color: var(--colour-secondary);
+  border-right: 2px solid var(--colour-tertiary);
+
+  // Local Variables
+  $nav-list-padding: 2rem;
+  $nav-list-margin: 2.2rem;
+  .nav-list {
+    // Layout
+    padding: $nav-list-padding 0;
+    margin: 0 $nav-list-margin;
+  }
+  .nav-list, .socials, .avatar{
+    // This is for when in mobile view. When the nav bar slides out, it doesn't adjust the text constantly. Looks more clean this way. 
+    width: calc( #{$sidebar-width-site-nav} - (#{$nav-list-margin} * 2));
+    margin: 0 auto;
+  }
+}
+.avatar {
+  // Layout
+  border-bottom: 2px solid var(--colour-tertiary);
+  // Content Styling
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.nav-list {
+  // Layout
+  justify-content: center;
+  // Local Variables
+  $padding-total: 1rem;
+  $padding-start-end: calc(#{$padding-total} / 2);
+  $margin-between-elements: calc(#{$padding-total} - #{$padding-start-end});
+  > li > a {
+    display: inline-block;
+    font-size: 1.2rem;
+
+    // Container margins
+    margin: $margin-between-elements 0;
+  }
+  // nav-sublist has to be nested to use local variables.
+  .nav-sublist {
+    li {
+      // Local Variables
+      $indent-spacing: 1rem;
+      $indent-guide-spacing: 0.1rem;
+      // Container Styling
+      display: block;
+      padding: $padding-total;
+      padding-bottom: 0;
+      // Text Styling
+      font-size: 1.1rem;
+      // Indentation Guides
+      border-left: 2px solid var(--colour-accent);
+      padding-left: calc(#{$indent-spacing} - #{$indent-guide-spacing});
+      margin-left: $indent-guide-spacing;
+
+      &:first-child {
+        padding-top: $padding-start-end; 
+      }
+      &:last-child {
+        padding-bottom: $padding-start-end; 
+      }
+    }
+  }
+}
+
+.socials {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  a:hover {
+    color: var(--colour-accent);
+    border: none;
+  }
+}
+

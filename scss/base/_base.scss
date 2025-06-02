@@ -1,43 +1,11 @@
-// ==========================================================================
-// Base Styles
-// ==========================================================================
-
-// @mixin lightdarkmodes(mode) {
-//   let usermode = "";
-//   if (mode === light) {
-//     usermode = "lightmode";
-//   } else if (mode === dark) {
-//     usermode = "darkmode";
-//   }
-
-//   --colour-base: #{palette(lightmode,palette,base)};
-//   --colour-secondary: #{palette(lightmode,palette,secondary)};
-//   --colour-tertiary: #{palette(lightmode,palette,tertiary)};
-//   --colour-accent: #{palette(lightmode,palette,accent)};
-//   --colour-text-base: #{palette(lightmode,text,base)};
-//   --colour-text-placeholder:  #{palette(lightmode,text,placeholder)};
-//   --colour-text-dark: #{palette(lightmode,text,dark)};
-//   --colour-text-shadow: #{palette(lightmode,text,shadow)};
-//   --colour-filter-brightness: #{palette(lightmode,filter,brightness)};
-// }
-
+@use "../abstracts";
 :root {
-  font-family: $font-family--primary;
-  font-size: 1rem;
-  font-weight: $font-w-normal;
-  letter-spacing: 0.1rem;
-  box-sizing: border-box;
-
-  // Light / Dark Mode
-  @include ldmode-colours("light");
-
-  // Colouring
-  color: var(--colour-text-base);
+  @include abstracts.ldmode("light");
 }
 // Colour profiles - dark
 @media (prefers-color-scheme: dark) {
   :root {
-    @include ldmode-colours("dark");
+    @include abstracts.ldmode("dark");
   }
 }
 // Light/Dark switcher
@@ -47,50 +15,12 @@ html {
 [data-theme="light"] {
   color-scheme: light;
   :root {
-    @include ldmode-colours("light");
+    @include abstracts.ldmode("light");
   }
 }
 [data-theme="dark"] {
   color-scheme: dark;
   :root {
-    @include ldmode-colours("dark");
+    @include abstracts.ldmode("dark");
   }
 }
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  background-image: $background-noise;
-  background-color: var(--colour-base);
-}
-
-// Lists
-ul {
-  margin: 0;
-  padding:0;
-  list-style-type: none;
-}
-
-// Links
-a {
-  color: inherit;
-  text-decoration: inherit;
-  border-bottom: 1px solid transparent;
-  &:hover {
-    border-bottom: var(--colour-accent);
-  }
-}
-
-// Images
-
-
-// Form elements
-
-
-// Button
-
-
-// Layout
-

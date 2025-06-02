@@ -1,24 +1,26 @@
-// ==========================================================================
+// Force Character set
+@charset 'utf-8';
+
+// Abstracts
+// Everything in here shouldn't actually compile to CSS. So like Variables, Functions etc.
+@use "abstracts";
+
 // Utilities
-// ==========================================================================
-@import "utilities/index";
+// Resuable styles that don't fit into other catagories.
+// For instance, reuseable container, screen reader only stuff etc.
+@use "utilities";
 
-// ==========================================================================
 // Base Styles
-// ==========================================================================
-@import "base/index";
+// General and global styles
+@use "base";
 
-// ==========================================================================
-// Layout Styles
-// ==========================================================================
-@import "layout/index";
+// Components
+// Components can be anything, as long as they:
+// - do one thing and one thing only;
+// - are re-usable and re-used across the project;
+// - are independent.
+@use "components";
 
-// ==========================================================================
-// Modules
-// ==========================================================================
-@import "modules/index";
-
-// ==========================================================================
-// States
-// ==========================================================================
-@import "states/index";
+// Layouts
+// Layout specific styles. A layout/section may be a whole webpage or part of a webpage.
+@use "layouts";

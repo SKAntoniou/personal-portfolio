@@ -1,0 +1,36 @@
+@use "../utilities" as *;
+
+.banner {
+  // Background
+  background: linear-gradient( var(--colour-filter-brightness), var(--colour-filter-brightness) ), url("#{$path-img}banner/banner-image.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  // Layout
+  height: $content-area-height;
+  @include mq(l) {
+    height: 100vh;
+  }
+  @extend %flex-column;
+
+  // Text formating
+  header {
+    flex: 1 1 90%;
+    @extend %flex-column;
+    h1, p {
+      margin: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.hint-scroll-down {
+  flex: 1 1 10%;
+  @extend %flex-column;
+  @include arrows-styling(down);
+}
