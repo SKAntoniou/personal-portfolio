@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 /* Box sizing rules */
 *,
 *::before,
@@ -74,6 +75,41 @@ textarea:not([rows]) {
 
 :root {
   --clr-primary: hsl(0, 0%, 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-primary: hsl(0, 0%, 100%);
+  }
+}
+html {
+  color-scheme: dark light;
+}
+
+[data-theme=light] {
+  color-scheme: light;
+}
+[data-theme=light] :root {
+  --clr-primary: hsl(0, 0%, 100%);
+}
+
+[data-theme=dark] {
+  color-scheme: dark;
+}
+[data-theme=dark] :root {
+  --clr-primary: hsl(0, 0%, 100%);
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

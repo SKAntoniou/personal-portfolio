@@ -6,7 +6,7 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
-@use "colors" as *;
+@use "colors";
 
 /// Z-Index Get Layer Value Function
 /// Z-Index is going to be stored in a Map so this will make it easier retrieving it.
@@ -20,6 +20,14 @@
     @return map.get($z-layers, $key);
   }
   @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+@function weight($key) {
+  @if map.has-key(font.$weight, $key) {
+    @return map.get(font.$weight, $key);
+  }
+  @warn "Unknown `#{$key}` in font.$weight.";
   @return null;
 }
 
@@ -60,5 +68,5 @@
 /// @param {String} $modifier - Modifier to add output colour
 /// @return {Value} - Colour at the end of colour map.
 @function colours($keys...) {
-  @return map-deep-get($colour-palette, $keys);
+  @return map-deep-get(colors.$colour-palette, $keys);
 }

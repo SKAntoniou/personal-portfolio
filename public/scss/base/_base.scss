@@ -1,4 +1,6 @@
 @use "../abstracts";
+
+// Light / Dark Mode Colours ===============================================
 :root {
   @include abstracts.ldmode("light");
 }
@@ -23,4 +25,12 @@ html {
   :root {
     @include abstracts.ldmode("dark");
   }
+}
+
+// Formatting =============================================================
+:root {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
