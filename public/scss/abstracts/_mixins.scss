@@ -64,7 +64,7 @@
   @if ($mod == 'light' or $mod == 'dark') {
     // This part is for shared colours that do not change 
     & {
-      --clr-primary: #{fn.colours(primary, 100)};
+      --clr-primary: #{fn.ldmode($mod, 'primary')};
     }
 
   } @else {

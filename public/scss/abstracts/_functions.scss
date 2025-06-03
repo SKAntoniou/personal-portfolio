@@ -70,3 +70,13 @@
 @function colours($keys...) {
   @return map-deep-get(colors.$colour-palette, $keys);
 }
+
+/// Returns Colour from the light/dark mode reference table.
+/// This is used within the mixin to make CSS variables for light/dark mode.
+/// @param {String} $mod - Should only be 'light' or 'dark' as they are the only two lists in $ldmode
+/// @param {String} $key - The value that should be in both 'light' and 'dark' lists.
+/// @return {Value} - Colour from $colour-palette table that was referenced
+@function ldmode($mode, $key) {
+  $ldmode-reference: map-deep-get(colors.$ldmode, $mode, $key);
+  @return colours($ldmode-reference...);
+}

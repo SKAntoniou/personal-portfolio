@@ -1,7 +1,10 @@
-<?php require('partials/header.php') ?>
+<?php require('partials/head.view.php') ?>
+<?php require('partials/sidebar.view.php') ?>
 
-<?php require('home-page/about-me.view.php') ?>
-<?php require('home-page/projects.view.php') ?>
-<?php require('home-page/contact-me.view.php') ?>
+<main>
 
-<?php require('partials/footer.php') ?>
+
+
+</main>
+
+<?php require('partials/footer.view.php') ?>

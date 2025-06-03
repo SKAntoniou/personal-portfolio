@@ -79,7 +79,7 @@ textarea:not([rows]) {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --clr-primary: hsl(0, 0%, 100%);
+    --clr-primary: hsl(0, 0%, 30%);
   }
 }
 html {
@@ -97,7 +97,7 @@ html {
   color-scheme: dark;
 }
 [data-theme=dark] :root {
-  --clr-primary: hsl(0, 0%, 100%);
+  --clr-primary: hsl(0, 0%, 30%);
 }
 
 :root {
@@ -110,6 +110,18 @@ html {
 
 :root {
   font-size: 1rem;
+}
+
+ul {
+  all: unset;
+  box-sizing: inherit;
+}
+ul li {
+  display: block;
+}
+ul ul > li {
+  padding-left: 1rem;
+  border-left: solid 0.125rem red;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,3 +4,16 @@
 :root {
   font-size: 1rem;
 }
+
+// Indentation Guides
+ul {
+  all: unset;
+  box-sizing: inherit;
+  li {
+    display: block;
+  }
+  ul>li {
+    padding-left: 1rem;
+    border-left: solid 0.125rem red;
+  }
+}
