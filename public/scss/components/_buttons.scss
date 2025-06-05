@@ -1,0 +1,13 @@
+.btn {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-radius: 0.35rem;
+
+  &, & * {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: var(--clr-primary);
+  }
+}

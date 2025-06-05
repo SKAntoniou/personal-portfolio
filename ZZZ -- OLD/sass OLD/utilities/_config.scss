@@ -61,12 +61,6 @@ $color-palettes: (
 // Border radius
 $border-radius-std: 1rem;
 
-// Breakpoints
-$breakpoint-small: 576px;
-$breakpoint-medium: 768px;
-$breakpoint-large: 992px;
-$breakpoint-extra-large: 1200px;
-
 // Side bars width
 $sidebar-width-site-nav: 250px;
 $sidebar-width-page-nav: 0px; // Change length later, this is for future blog style pages
@@ -76,9 +70,3 @@ $header-height: 5rem;
 
 // Content area Height
 $content-area-height: calc(100vh - 5rem);
-
-// Max Content area width
-$break-max-width-small: calc(#{$breakpoint-small} - (#{$global-padding} * 2));
-$break-max-width-medium: calc(#{$breakpoint-medium} - (#{$global-padding} * 2));
-$break-max-width-large: calc(#{$breakpoint-large} - (#{$global-padding} * 2));
-$break-max-width-extra-large: calc(#{$breakpoint-extra-large} - (#{$global-padding} * 2));

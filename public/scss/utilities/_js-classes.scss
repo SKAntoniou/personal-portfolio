@@ -1,0 +1,20 @@
+// Classes/Styles used for Javascript Only
+
+@use "../abstracts" as ab;
+
+// This is for collapsing sidebar, leaving only logos.
+.nav-desktop-collapsed {
+  // Doubling of background colour as need to transistion to new style.
+  a {
+    width: ab.map-deep(ab.$sidebar-calc, a-tag);
+    background-color: var(--clr-secondary);
+    white-space: nowrap;
+  }
+  span {
+    border-color: var(--clr-secondary);
+    margin-left: 0;
+  }
+}
+.main-collapsed {
+  width: calc(100% - calc(ab.map-deep(ab.$sidebar-calc, collapsed)));
+}

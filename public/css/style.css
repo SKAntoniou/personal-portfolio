@@ -1,4 +1,177 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts//icomoon.eot?scbuc9");
+  src: url("../fonts//icomoon.eot?scbuc9#iefix") format("embedded-opentype"), url("../fonts//icomoon.ttf?scbuc9") format("truetype"), url("../fonts//icomoon.woff?scbuc9") format("woff"), url("../fonts//icomoon.svg?scbuc9#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-laptop:before {
+  content: "\e909";
+}
+
+.icon-newspaper:before {
+  content: "\e911";
+}
+
+.icon-sun:before {
+  content: "\e90a";
+}
+
+.icon-moon:before {
+  content: "\e90b";
+}
+
+.icon-sun1:before {
+  content: "\e90c";
+}
+
+.icon-moon1:before {
+  content: "\e90d";
+}
+
+.icon-embed2:before {
+  content: "\ea80";
+}
+
+.icon-keyboard_arrow_down:before {
+  content: "\e901";
+}
+
+.icon-keyboard_arrow_left:before {
+  content: "\e902";
+}
+
+.icon-keyboard_arrow_right:before {
+  content: "\e903";
+}
+
+.icon-keyboard_arrow_up:before {
+  content: "\e904";
+}
+
+.icon-arrow_back:before {
+  content: "\e900";
+}
+
+.icon-arrow_forward:before {
+  content: "\e906";
+}
+
+.icon-arrow_upward:before {
+  content: "\e907";
+}
+
+.icon-arrow_downward:before {
+  content: "\e908";
+}
+
+.icon-school:before {
+  content: "\e90e";
+}
+
+.icon-user:before {
+  content: "\f007";
+}
+
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+
+.icon-paper-plane:before {
+  content: "\f1d8";
+}
+
+.icon-send:before {
+  content: "\f1d8";
+}
+
+.icon-briefcase:before {
+  content: "\e90f";
+}
+
+.icon-home:before {
+  content: "\e910";
+}
+
+.icon-css3:before {
+  content: "\e912";
+  color: #1572b6;
+}
+
+.icon-docker:before {
+  content: "\e913";
+  color: #1488c6;
+}
+
+.icon-github:before {
+  content: "\e905";
+}
+
+.icon-html5:before {
+  content: "\e914";
+  color: #e34f26;
+}
+
+.icon-javascript:before {
+  content: "\e915";
+  color: #f7df1e;
+}
+
+.icon-jquery:before {
+  content: "\e916";
+  color: #0769ad;
+}
+
+.icon-laravel:before {
+  content: "\e917";
+  color: #ff2d20;
+}
+
+.icon-php:before {
+  content: "\e918";
+  color: #777bb4;
+}
+
+.icon-sass:before {
+  content: "\e919";
+  color: #c69;
+}
+
+.container {
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  margin: 0 auto;
+}
+
+.nav-desktop-collapsed a {
+  width: 3rem;
+  background-color: var(--clr-secondary);
+  white-space: nowrap;
+}
+.nav-desktop-collapsed span {
+  border-color: var(--clr-secondary);
+  margin-left: 0;
+}
+
+.main-collapsed {
+  width: calc(100% - 4.25rem);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -75,11 +248,17 @@ textarea:not([rows]) {
 
 :root {
   --clr-primary: hsl(0, 0%, 100%);
+  --clr-secondary: hsl(0, 0%, 70%);
+  --clr-accent: hsl(21, 95%, 58%);
+  --text-primary: hsl(0, 0%, 20%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --clr-primary: hsl(0, 0%, 30%);
+    --clr-primary: hsl(0, 0%, 20%);
+    --clr-secondary: hsl(0, 0%, 14%);
+    --clr-accent: hsl(21, 95%, 58%);
+    --text-primary: hsl(0, 0%, 100%);
   }
 }
 html {
@@ -91,13 +270,19 @@ html {
 }
 [data-theme=light] :root {
   --clr-primary: hsl(0, 0%, 100%);
+  --clr-secondary: hsl(0, 0%, 70%);
+  --clr-accent: hsl(21, 95%, 58%);
+  --text-primary: hsl(0, 0%, 20%);
 }
 
 [data-theme=dark] {
   color-scheme: dark;
 }
 [data-theme=dark] :root {
-  --clr-primary: hsl(0, 0%, 30%);
+  --clr-primary: hsl(0, 0%, 20%);
+  --clr-secondary: hsl(0, 0%, 14%);
+  --clr-accent: hsl(21, 95%, 58%);
+  --text-primary: hsl(0, 0%, 100%);
 }
 
 :root {
@@ -108,8 +293,26 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: var(--clr-primary);
+  z-index: 1;
+  position: relative;
+  margin-left: auto;
+  width: calc(100% - 21.875rem);
+  transition: all 1s;
+  min-height: 100vh;
+}
+
 :root {
+  font-family: "Outfit", Helvetica, Arial, sans-serif;
   font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
 }
 
 ul {
@@ -119,9 +322,54 @@ ul {
 ul li {
   display: block;
 }
-ul ul > li {
-  padding-left: 1rem;
-  border-left: solid 0.125rem red;
+ul li i:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+}
+ul li span {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  padding: 0.5rem 0.625rem;
+}
+ul ul > li span {
+  border-left: solid 0.125rem var(--clr-accent);
+  margin-left: 1rem;
+}
+ul ul > li:first-child {
+  margin-top: 0.25rem;
+}
+ul ul > li:last-child {
+  margin-bottom: 0.25rem;
+}
+
+.btn {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-radius: 0.35rem;
+}
+.btn, .btn * {
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: var(--clr-primary);
+}
+
+.nav-desktop {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  z-index: 0;
+  width: 21.875rem;
+  padding: 0.625rem;
+  background-color: var(--clr-secondary);
+}
+.nav-desktop, .nav-desktop * {
+  transition: all 1s;
 }
 
 /*# sourceMappingURL=style.css.map */

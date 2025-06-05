@@ -1,0 +1,7 @@
+@use "../abstracts";
+
+.container {
+  padding-left: abstracts.map-deep(abstracts.$g-padding, base);
+  padding-right: abstracts.map-deep(abstracts.$g-padding, base);
+  margin: 0 auto;
+}

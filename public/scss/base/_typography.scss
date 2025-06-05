@@ -1,19 +1,49 @@
-@use "../abstracts";
+@use "../abstracts" as ab;
+// Import Font
+@include ab.font-import(ab.$font-url-outfit);
 
 // Base Styles
 :root {
+  font-family: ab.$font-family--primary;
   font-size: 1rem;
+  font-weight: ab.weight(normal);
+  letter-spacing: 0.1rem;
 }
 
 // Indentation Guides
 ul {
   all: unset;
   box-sizing: inherit;
+
   li {
     display: block;
+
+    i:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: ab.map-deep(ab.$sidebar, icon-container);
+    }
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      padding: 0.5rem ab.map-deep(ab.$sidebar, icon-padding);
+    }
   }
+
   ul>li {
-    padding-left: 1rem;
-    border-left: solid 0.125rem red;
+    span {
+      border-left: solid 0.125rem var(--clr-accent);
+      margin-left: 1rem;
+    }
+
+    &:first-child {
+      margin-top: 0.25rem;
+    }
+    &:last-child {
+      margin-bottom: 0.25rem;
+    }
   }
 }

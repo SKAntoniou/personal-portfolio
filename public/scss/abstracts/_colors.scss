@@ -8,8 +8,10 @@ $colour-palette: (
     100: hsl(0, 0%, 100%),
     200: hsl(0, 0%, 70%),
     300: hsl(0, 0%, 50%),
-    400: hsl(0, 0%, 30%),
+    400: hsl(0, 0%, 20%),
     500: hsl(0, 0%, 14%),
+  ),
+  secondary: (
   ),
   accent: (
     100: hsl(21, 95%, 80%),
@@ -27,7 +29,6 @@ $colour-palette: (
   success: (
 
   ),
-  
 );
 
 /// ldmode map is a light/dark mode reference to original colours in $colour-palette
@@ -37,10 +38,12 @@ $ldmode: (
     primary: (primary, 100),
     secondary: (primary, 200),
     accent: (accent, 300),
+    text: (primary, 400),
   ),
   dark: (
     primary: (primary, 400),
     secondary: (primary, 500),
     accent: (accent, 300),
+    text: (primary, 100),
   )
-)
+);

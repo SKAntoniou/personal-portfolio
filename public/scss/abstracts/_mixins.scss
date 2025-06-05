@@ -6,6 +6,22 @@
 @use "sass:meta";
 @use "functions" as fn;
 
+/// Light & Dark mode Mixin
+/// Used in base file to convert Sass Variables to CSS Variables.
+@mixin ldmode($mod) {
+  @if ($mod == 'light' or $mod == 'dark') {
+    & {
+      --clr-primary: #{fn.ldmode($mod, 'primary')};
+      --clr-secondary: #{fn.ldmode($mod, 'secondary')};
+      --clr-accent: #{fn.ldmode($mod, 'accent')};
+      --text-primary: #{fn.ldmode($mod, 'text')};
+    }
+
+  } @else {
+    @error "#{$mod} is not a Light/Dark mode option in the ldmode function. The only allowed arguments are 'light' or 'dark'."
+  }
+};
+
 /// Print Mixin
 /// Used for in conjunction with a map for file or scope specific styling.
 /// 
@@ -55,19 +71,5 @@
   }
   @else {
     @warn "Font #{$font-name} variable was not found so it was not imported";
-  }
-}
-
-/// Light & Dark mode Mixin
-/// Used in base file to convert Sass Variables to CSS Variables.
-@mixin ldmode($mod) {
-  @if ($mod == 'light' or $mod == 'dark') {
-    // This part is for shared colours that do not change 
-    & {
-      --clr-primary: #{fn.ldmode($mod, 'primary')};
-    }
-
-  } @else {
-    @error "#{$mod} is not a Light/Dark mode option in the ldmode function. The only allowed arguments are 'light' or 'dark'."
   }
 }

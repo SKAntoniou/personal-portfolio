@@ -1,11 +1,8 @@
-@use "mixins" as mix;
-
 // File Structure
 $path-font: '../fonts/';
 
 // Font Imports
 $font-url-outfit: 'https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap';
-@include mix.font-import($font-url-outfit);
 
 // Font Family
 $font-family--primary: 'Outfit', Helvetica, Arial, sans-serif;
@@ -17,5 +14,5 @@ $weight: (
   normal: 400,
   bold: 700,
   xbold: 900,
-)
+);
 

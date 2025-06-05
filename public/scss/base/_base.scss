@@ -1,13 +1,13 @@
-@use "../abstracts";
+@use "../abstracts" as ab;
 
 // Light / Dark Mode Colours ===============================================
 :root {
-  @include abstracts.ldmode("light");
+  @include ab.ldmode("light");
 }
 // Colour profiles - dark
 @media (prefers-color-scheme: dark) {
   :root {
-    @include abstracts.ldmode("dark");
+    @include ab.ldmode("dark");
   }
 }
 // Light/Dark switcher
@@ -17,13 +17,13 @@ html {
 [data-theme="light"] {
   color-scheme: light;
   :root {
-    @include abstracts.ldmode("light");
+    @include ab.ldmode("light");
   }
 }
 [data-theme="dark"] {
   color-scheme: dark;
   :root {
-    @include abstracts.ldmode("dark");
+    @include ab.ldmode("dark");
   }
 }
 
@@ -33,4 +33,17 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  background-color: var(--clr-primary);
+  z-index: ab.z('default');
+  position: relative;
+  margin-left: auto;
+  width: calc(100% - calc(ab.map-deep(ab.$sidebar, width)));
+  transition: all 1s;
+  min-height: 100vh;
 }

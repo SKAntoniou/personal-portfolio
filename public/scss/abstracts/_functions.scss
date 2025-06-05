@@ -6,7 +6,9 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
-@use "colors";
+@use "colors" as clr;
+@use "fonts" as ft;
+@use "z-layers" as z;
 
 /// Z-Index Get Layer Value Function
 /// Z-Index is going to be stored in a Map so this will make it easier retrieving it.
@@ -16,16 +18,16 @@
 ///   z-index: z(overlay);
 /// }
 @function z($key) {
-  @if map.has-key($z-layers, $key) {
-    @return map.get($z-layers, $key);
+  @if map.has-key(z.$z-layers, $key) {
+    @return map.get(z.$z-layers, $key);
   }
   @warn "Unknown `#{$key}` in $z-layers.";
   @return null;
 }
 
 @function weight($key) {
-  @if map.has-key(font.$weight, $key) {
-    @return map.get(font.$weight, $key);
+  @if map.has-key(ft.$weight, $key) {
+    @return map.get(ft.$weight, $key);
   }
   @warn "Unknown `#{$key}` in font.$weight.";
   @return null;
@@ -46,7 +48,7 @@
 /// @param {Map} $map - Map
 /// @param {Arglist} $keys - Keys to test
 /// @return {Value} - Value at the end of Key link
-@function map-deep-get($map, $keys...) {
+@function map-deep($map, $keys...) {
   @if list.length($keys) == 1 and (
     meta.type-of(list.nth($keys, 1)) == 'arglist' or
     meta.type-of(list.nth($keys, 1)) == 'list') 
@@ -68,7 +70,7 @@
 /// @param {String} $modifier - Modifier to add output colour
 /// @return {Value} - Colour at the end of colour map.
 @function colours($keys...) {
-  @return map-deep-get(colors.$colour-palette, $keys);
+  @return map-deep(clr.$colour-palette, $keys);
 }
 
 /// Returns Colour from the light/dark mode reference table.
@@ -77,6 +79,6 @@
 /// @param {String} $key - The value that should be in both 'light' and 'dark' lists.
 /// @return {Value} - Colour from $colour-palette table that was referenced
 @function ldmode($mode, $key) {
-  $ldmode-reference: map-deep-get(colors.$ldmode, $mode, $key);
+  $ldmode-reference: map-deep(clr.$ldmode, $mode, $key);
   @return colours($ldmode-reference...);
 }
