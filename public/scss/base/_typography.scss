@@ -10,6 +10,10 @@
   letter-spacing: 0.1rem;
 }
 
+a {
+  cursor: pointer;
+}
+
 // Indentation Guides
 ul {
   all: unset;
@@ -19,31 +23,17 @@ ul {
     display: block;
 
     i:before {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: ab.map-deep(ab.$sidebar, icon-container);
-    }
-    span {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1.15rem;
-      padding: 0.5rem ab.map-deep(ab.$sidebar, icon-padding);
+      font-size: 1.3rem;
     }
   }
 
   ul>li {
+    i:before {
+      font-size: 1.15rem;
+    }
     span {
       border-left: solid 0.125rem var(--clr-accent);
       margin-left: 1rem;
-    }
-
-    &:first-child {
-      margin-top: 0.25rem;
-    }
-    &:last-child {
-      margin-bottom: 0.25rem;
     }
   }
 }

@@ -88,6 +88,22 @@
   content: "\f007";
 }
 
+.icon-chevron-left:before {
+  content: "\f053";
+}
+
+.icon-chevron-right:before {
+  content: "\f054";
+}
+
+.icon-chevron-up:before {
+  content: "\f077";
+}
+
+.icon-chevron-down:before {
+  content: "\f078";
+}
+
 .icon-linkedin:before {
   content: "\f0e1";
 }
@@ -158,6 +174,13 @@
   margin: 0 auto;
 }
 
+.hide {
+  display: none !important;
+}
+
+.nav-desktop-collapsed {
+  width: 18rem !important;
+}
 .nav-desktop-collapsed a {
   width: 3rem;
   background-color: var(--clr-secondary);
@@ -165,11 +188,17 @@
 }
 .nav-desktop-collapsed span {
   border-color: var(--clr-secondary);
+  border-width: 0;
   margin-left: 0;
+  gap: 1.5rem !important;
 }
 
 .main-collapsed {
   width: calc(100% - 4.25rem);
+}
+
+#sidebar-collapse.rotate i:before {
+  transform: rotate(180deg);
 }
 
 /* Box sizing rules */
@@ -267,8 +296,6 @@ html {
 
 [data-theme=light] {
   color-scheme: light;
-}
-[data-theme=light] :root {
   --clr-primary: hsl(0, 0%, 100%);
   --clr-secondary: hsl(0, 0%, 70%);
   --clr-accent: hsl(21, 95%, 58%);
@@ -277,8 +304,6 @@ html {
 
 [data-theme=dark] {
   color-scheme: dark;
-}
-[data-theme=dark] :root {
   --clr-primary: hsl(0, 0%, 20%);
   --clr-secondary: hsl(0, 0%, 14%);
   --clr-accent: hsl(21, 95%, 58%);
@@ -303,7 +328,7 @@ main {
   z-index: 1;
   position: relative;
   margin-left: auto;
-  width: calc(100% - 21.875rem);
+  width: calc(100% - 16rem);
   transition: all 1s;
   min-height: 100vh;
 }
@@ -315,6 +340,10 @@ main {
   letter-spacing: 0.1rem;
 }
 
+a {
+  cursor: pointer;
+}
+
 ul {
   all: unset;
   box-sizing: inherit;
@@ -323,31 +352,19 @@ ul li {
   display: block;
 }
 ul li i:before {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.75rem;
+  font-size: 1.3rem;
 }
-ul li span {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+ul ul > li i:before {
   font-size: 1.15rem;
-  padding: 0.5rem 0.625rem;
 }
 ul ul > li span {
   border-left: solid 0.125rem var(--clr-accent);
   margin-left: 1rem;
 }
-ul ul > li:first-child {
-  margin-top: 0.25rem;
-}
-ul ul > li:last-child {
-  margin-bottom: 0.25rem;
-}
 
 .btn {
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--text-primary);
   border-radius: 0.35rem;
@@ -362,14 +379,58 @@ ul ul > li:last-child {
 .nav-desktop {
   position: fixed;
   left: 0;
-  height: 100vh;
   z-index: 0;
-  width: 21.875rem;
+  height: 100vh;
+  width: 16rem;
   padding: 0.625rem;
   background-color: var(--clr-secondary);
+  display: flex;
+  flex-direction: column;
 }
-.nav-desktop, .nav-desktop * {
+.nav-desktop,
+.nav-desktop * {
   transition: all 1s;
+}
+.nav-desktop i:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  transition: transform 1s;
+}
+.nav-desktop a {
+  min-height: 3.5rem;
+}
+.nav-desktop span {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  padding: 0.5rem 0.625rem;
+}
+.nav-desktop nav {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2.5fr 1fr;
+}
+.nav-desktop nav > :first-child,
+.nav-desktop nav > :last-child {
+  display: flex;
+  flex-direction: column;
+}
+.nav-desktop nav > :first-child {
+  justify-content: start;
+}
+.nav-desktop nav > :last-child {
+  justify-content: end;
+}
+
+.ldtoggle i:before {
+  font-size: 1.8rem;
+}
+.ldtoggle#darkmode i:before {
+  font-size: 2.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

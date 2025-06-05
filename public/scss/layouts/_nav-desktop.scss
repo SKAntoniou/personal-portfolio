@@ -1,14 +1,75 @@
 @use "../abstracts" as ab;
 
 .nav-desktop {
+  // Positioning
   position: fixed;
   left: 0;
-  height: 100vh;
   z-index: ab.z('sidebar');
+  // Sizing
+  height: 100vh;
   width: ab.map-deep(ab.$sidebar, width);
   padding: ab.map-deep(ab.$sidebar, padding);
+  // Colouring
   background-color: var(--clr-secondary);
-  &, * {
+  // Internal Layout
+  display: flex;
+  flex-direction: column;
+
+  &,
+  * {
     transition: all 1s;
+  }
+
+  i:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: ab.map-deep(ab.$sidebar, icon-container);
+    transition: transform 1s;
+  }
+
+  a {
+    min-height: 3.5rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+    padding: 0.5rem ab.map-deep(ab.$sidebar, icon-padding);
+  }
+
+  nav {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.5fr 1fr;
+
+    > :first-child,
+    > :last-child {
+      display: flex;
+      flex-direction: column;
+    }
+
+    > :first-child {
+      justify-content: start;
+    }
+
+    > :last-child {
+      justify-content: end;
+    }
+  }
+}
+
+.ldtoggle {
+  i:before {
+    font-size: 1.8rem;
+  }
+
+  &#darkmode {
+    i:before {
+      font-size: 2.4rem;
+    }
   }
 }

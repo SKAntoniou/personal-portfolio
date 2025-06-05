@@ -16,15 +16,11 @@ html {
 }
 [data-theme="light"] {
   color-scheme: light;
-  :root {
-    @include ab.ldmode("light");
-  }
+  @include ab.ldmode("light");
 }
 [data-theme="dark"] {
   color-scheme: dark;
-  :root {
-    @include ab.ldmode("dark");
-  }
+  @include ab.ldmode("dark");
 }
 
 // Formatting =============================================================
@@ -47,3 +43,4 @@ main {
   transition: all 1s;
   min-height: 100vh;
 }
+

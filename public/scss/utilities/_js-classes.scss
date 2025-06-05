@@ -2,9 +2,15 @@
 
 @use "../abstracts" as ab;
 
+// Universal JS Classes
+.hide {
+  display: none !important;
+}
+
 // This is for collapsing sidebar, leaving only logos.
 .nav-desktop-collapsed {
   // Doubling of background colour as need to transistion to new style.
+  width: calc(ab.map-deep(ab.$sidebar, width) + 2rem) !important;
   a {
     width: ab.map-deep(ab.$sidebar-calc, a-tag);
     background-color: var(--clr-secondary);
@@ -12,9 +18,16 @@
   }
   span {
     border-color: var(--clr-secondary);
+    border-width: 0;
     margin-left: 0;
+    gap: 1.5rem !important;
   }
 }
 .main-collapsed {
   width: calc(100% - calc(ab.map-deep(ab.$sidebar-calc, collapsed)));
+}
+#sidebar-collapse.rotate {
+  i:before{
+    transform: rotate(180deg);
+  }
 }

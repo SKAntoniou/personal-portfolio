@@ -5,8 +5,6 @@
 
   <?php require('partials/nav-mobile.view.php') ?>
 
-  <button class="btn" style="float:right;" id="sidebar-collapse">Test</button>
-
 </main>
 
 <?php require('partials/footer.view.php') ?>
