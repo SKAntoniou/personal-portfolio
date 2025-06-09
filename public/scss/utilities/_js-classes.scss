@@ -1,6 +1,7 @@
 // Classes/Styles used for Javascript Only
 
 @use "../abstracts" as ab;
+@use "mq";
 
 // Universal JS Classes
 .hide {
@@ -12,9 +13,7 @@
   // Doubling of background colour as need to transistion to new style.
   width: calc(ab.map-deep(ab.$sidebar, width) + 2rem) !important;
   a {
-    width: ab.map-deep(ab.$sidebar-calc, a-tag);
-    background-color: var(--clr-secondary);
-    white-space: nowrap;
+    width: ab.map-deep(ab.$sidebar-calc, a-tag-collapsed) !important;
   }
   span {
     border-color: var(--clr-secondary);

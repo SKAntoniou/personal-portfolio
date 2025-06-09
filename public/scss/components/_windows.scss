@@ -1,0 +1,45 @@
+// Mock windows like a mac terminal or web browser
+
+@use "../abstracts" as ab;
+
+
+// Terminal Window
+.window-terminal {
+  // Terminal Styling
+  background-color: var(--window-terminal-background);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: ab.colours(window, terminal, shared, box-shadow);
+
+  // Header
+  >div:nth-child(1) {
+    background-color: var(--window-terminal-header);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  
+    // Buttons in the header.
+    >div {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+      &:nth-child(1) {
+        background-color: ab.colours(window, terminal, shared, red);
+      }
+      &:nth-child(2) {
+        background-color: ab.colours(window, terminal, shared, yellow);
+      }
+      &:nth-child(3) {
+        background-color: ab.colours(window, terminal, shared, green);
+      }
+    }
+  }
+  // Body of the Window.
+  >div:nth-child(2) {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    padding: 20px;
+    color: var(--text-primary);
+  }
+}

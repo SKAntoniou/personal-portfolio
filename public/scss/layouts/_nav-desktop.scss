@@ -1,4 +1,16 @@
+@use "sass:map";
 @use "../abstracts" as ab;
+
+// Including styles for main related to the sidebar
+main {
+  position: relative;
+  z-index: ab.z('default');
+  width: calc(100% - calc(ab.map-deep(ab.$sidebar, width)));
+  margin-left: auto;
+  min-height: 100vh;
+  @include ab.transitions(map.get(ab.$transitions, main));
+  border-left: solid 2px var(--clr-accent);
+}
 
 .nav-desktop {
   // Positioning
@@ -10,14 +22,13 @@
   width: ab.map-deep(ab.$sidebar, width);
   padding: ab.map-deep(ab.$sidebar, padding);
   // Colouring
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-primary);
   // Internal Layout
   display: flex;
   flex-direction: column;
 
-  &,
-  * {
-    transition: all 1s;
+  &, *, *:before, *:after {
+    @include ab.transitions(map.get(ab.$transitions, sidebar));
   }
 
   i:before {
@@ -25,15 +36,16 @@
     align-items: center;
     justify-content: center;
     width: ab.map-deep(ab.$sidebar, icon-container);
-    transition: transform 1s;
   }
 
   a {
-    min-height: 3.5rem;
+    width: ab.map-deep(ab.$sidebar-calc, a-tag);
   }
 
   span {
     display: flex;
+    min-height: 3.5rem;
+    white-space: nowrap;
     align-items: center;
     gap: 0.75rem;
     font-size: 1.15rem;

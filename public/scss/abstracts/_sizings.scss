@@ -15,6 +15,17 @@ $sidebar: (
    // This needs to get replaced by a calc. Actually the whole page will move over it so it won't need to.
 );
 $sidebar-calc: (
-  a-tag: calc(fn.map-deep($sidebar, icon-container) + (2 * fn.map-deep($sidebar, padding))),
-  collapsed: calc(fn.map-deep($sidebar, icon-container) + (2 * (fn.map-deep($sidebar, icon-padding) + (fn.map-deep($sidebar, padding))))),
+  a-tag: calc(
+    fn.map-deep($sidebar, width) 
+    - (2 * fn.map-deep($sidebar, padding))
+    ),
+  a-tag-collapsed: calc(
+    fn.map-deep($sidebar, icon-container) 
+    + (2 * fn.map-deep($sidebar, padding))
+    ),
+  collapsed: calc(
+    fn.map-deep($sidebar, icon-container)
+    + (2 * (fn.map-deep($sidebar, icon-padding)
+    + (fn.map-deep($sidebar, padding))))
+    ),
 );

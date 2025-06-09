@@ -6,7 +6,7 @@
 $colour-palette: (
   primary: (
     100: hsl(0, 0%, 100%),
-    200: hsl(0, 0%, 70%),
+    200: hsl(0, 0%, 92%),
     300: hsl(0, 0%, 50%),
     400: hsl(0, 0%, 20%),
     500: hsl(0, 0%, 14%),
@@ -21,13 +21,29 @@ $colour-palette: (
     500: hsl(21, 95%, 30%),
   ),
   error: (
-
   ),
   warning: (
-
   ),
   success: (
-
+  ),
+  window: (
+    terminal: (
+      light: (
+        background: hsl(0, 0%, 100%),
+        header: hsl(0, 4%, 95%),
+      ),
+      dark: (
+        background: hsl(0, 0%, 12%),
+        header: hsl(216, 4%, 24%),
+      ),
+      // Won't make CSS Variables for shared values
+      shared: (
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+        red: hsl(3, 100%, 67%),
+        yellow: hsl(41, 99%, 59%),
+        green: hsl(129, 67%, 47%),
+      ),
+    ),
   ),
 );
 
@@ -37,13 +53,19 @@ $ldmode: (
   light: (
     primary: (primary, 100),
     secondary: (primary, 200),
-    accent: (accent, 300),
+    accent: (accent, 400),
     text: (primary, 400),
+
+    window-terminal-background: (window, terminal, light, background),
+    window-terminal-header: (window, terminal, light, header),
   ),
   dark: (
-    primary: (primary, 400),
-    secondary: (primary, 500),
+    primary: (primary, 500),
+    secondary: (primary, 400),
     accent: (accent, 300),
     text: (primary, 100),
+
+    window-terminal-background: (window, terminal, dark, background),
+    window-terminal-header: (window, terminal, dark, header),
   )
 );

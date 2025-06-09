@@ -22,6 +22,10 @@ html {
   color-scheme: dark;
   @include ab.ldmode("dark");
 }
+// Theme styling
+*, *:before, *:after {
+  @include ab.transitions();
+}
 
 // Formatting =============================================================
 :root {
@@ -31,16 +35,15 @@ html {
   box-sizing: inherit;
 }
 body {
+  // Prevent margin collapse
+  display: flex;
+  flex-direction: column; 
+  // Remove default spacing
   margin: 0;
   padding: 0;
+  // Prevent overscroll
+  overscroll-behavior: none;
 }
 main {
   background-color: var(--clr-primary);
-  z-index: ab.z('default');
-  position: relative;
-  margin-left: auto;
-  width: calc(100% - calc(ab.map-deep(ab.$sidebar, width)));
-  transition: all 1s;
-  min-height: 100vh;
 }
-

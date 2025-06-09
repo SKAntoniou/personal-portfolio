@@ -3,8 +3,11 @@
 // ============================================================
 
 // Imports
+@use "sass:list";
+@use "sass:map";
 @use "sass:meta";
 @use "functions" as fn;
+@use "transitions" as tr;
 
 /// Light & Dark mode Mixin
 /// Used in base file to convert Sass Variables to CSS Variables.
@@ -15,7 +18,8 @@
       --clr-accent: #{fn.ldmode($mod, 'accent')};
       --text-primary: #{fn.ldmode($mod, 'text')};
 
-
+      --window-terminal-background: #{fn.ldmode($mod, 'window-terminal-background')};
+      --window-terminal-header: #{fn.ldmode($mod, 'window-terminal-header')};
   } @else {
     @error "#{$mod} is not a Light/Dark mode option in the ldmode function. The only allowed arguments are 'light' or 'dark'."
   }
@@ -71,4 +75,40 @@
   @else {
     @warn "Font #{$font-name} variable was not found so it was not imported";
   }
+}
+
+/// Transitions Mixin.
+/// This is needed as transistions will override each other like normal CSS properties even though they may be targeting differnt CSS properties.
+/// Defaults are blank so then you can call it in base.scss for global transitions.
+@mixin transitions( $transition-map: () ) {
+  $transitions: ();
+
+  // Global transitions
+  // These are set no matter what is passed in.
+  // Mainly using this to change colours for Light / Dark Mode Theme
+  // Duplicate code below for more catagories.
+  @each $prop in fn.map-deep(tr.$transitions, theme, props) {
+    $transitions: list.append(
+      $transitions,
+      #{$prop} #{fn.map-deep(tr.$transitions, theme, duration)} #{fn.map-deep(tr.$transitions, theme, timing)},
+      comma
+    );
+  }
+
+  // Optional second group - Pulling from a map
+  @if list.length($transition-map) > 0 {
+    $props: map.get($transition-map, props);
+    $duration: map.get($transition-map, duration);
+    $timing: map.get($transition-map, timing);
+
+    @each $prop in $props {
+      $transitions: list.append(
+        $transitions,
+        #{$prop} #{$duration} #{$timing},
+        comma
+      );
+    }
+  }
+
+  transition: $transitions;
 }

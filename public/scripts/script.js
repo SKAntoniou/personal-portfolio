@@ -7,6 +7,17 @@ sidebarButton.addEventListener('click', () => {
   sidebar[0].classList.toggle('nav-desktop-collapsed');
   sidebarButton.classList.toggle('rotate');
 });
+// This needs to be only added when it is closed.
+// sidebar[0].addEventListener('mouseover', () => {
+//   mainTag[0].classList.toggle('main-collapsed');
+//   sidebar[0].classList.toggle('nav-desktop-collapsed');
+//   sidebarButton.classList.toggle('rotate');
+// });
+// sidebar[0].addEventListener('mouseout', () => {
+//   mainTag[0].classList.toggle('main-collapsed');
+//   sidebar[0].classList.toggle('nav-desktop-collapsed');
+//   sidebarButton.classList.toggle('rotate');
+// });
 
 // Light / Dark Mode Toggle
 // Will default to browser settings and only show option to switch.

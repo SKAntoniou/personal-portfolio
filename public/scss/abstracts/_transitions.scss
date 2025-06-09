@@ -1,0 +1,21 @@
+// Transitions to make sure timings match up
+// Use transitions mixin to pass them in.
+$transitions: (
+  // Theme will be passed in universally
+  theme: (
+    props: (color, background-color),
+    duration: 0.3s,
+    timing: linear,
+  ),
+  // These will be section specific, only one will be passed in and will override the theme if needed
+  sidebar: (
+    props: (width, margin, padding, transform, border-color, gap, border-width),
+    duration: 0.3s,
+    timing: linear,
+  ),
+  main: (
+    props: width,
+    duration: 0.3s,
+    timing: linear,
+  ),
+);
