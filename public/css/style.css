@@ -191,8 +191,10 @@
   gap: 1.5rem !important;
 }
 
-.main-collapsed {
-  width: calc(100% - 4.25rem);
+@media (min-width: 46.25em) {
+  .main-collapsed {
+    width: calc(100% - 4.25rem);
+  }
 }
 
 #sidebar-collapse.rotate i:before {
@@ -420,11 +422,16 @@ ul ul > li span {
 main {
   position: relative;
   z-index: 1;
-  width: calc(100% - 16rem);
   margin-left: auto;
   min-height: 100vh;
   transition: color 0.3s linear, background-color 0.3s linear, width 0.3s linear;
-  border-left: solid 2px var(--clr-accent);
+  width: 100%;
+}
+@media (min-width: 46.25em) {
+  main {
+    width: calc(100% - 16rem);
+    border-left: solid 2px var(--clr-accent);
+  }
 }
 
 .nav-desktop {
@@ -435,8 +442,13 @@ main {
   width: 16rem;
   padding: 0.625rem;
   background-color: var(--clr-primary);
-  display: flex;
-  flex-direction: column;
+  display: none;
+}
+@media (min-width: 46.25em) {
+  .nav-desktop {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .nav-desktop, .nav-desktop *, .nav-desktop *:before, .nav-desktop *:after {
   transition: color 0.3s linear, background-color 0.3s linear, width 0.3s linear, margin 0.3s linear, padding 0.3s linear, transform 0.3s linear, border-color 0.3s linear, gap 0.3s linear, border-width 0.3s linear;
@@ -482,6 +494,52 @@ main {
 }
 .ldtoggle#darkmode i:before {
   font-size: 2.4rem;
+}
+
+@media (max-width: 46.24em) {
+  main {
+    margin-bottom: 5.5rem;
+  }
+}
+
+.nav-mobile {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  padding: 0.625rem;
+  height: 5.5rem;
+  background-color: var(--clr-primary);
+  border-top: solid 2px var(--clr-accent);
+  display: block;
+}
+@media (min-width: 46.25em) {
+  .nav-mobile {
+    display: none;
+  }
+}
+.nav-mobile nav {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-mobile a {
+  height: 4.25rem;
+  width: 4.25rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-secondary);
+}
+.nav-mobile span {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  padding: 0.5rem 0.625rem;
+}
+.nav-mobile i:before {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-hero {

@@ -1,0 +1,56 @@
+// Mobile Navigation
+
+@use "../abstracts" as ab;
+@use "../utilities/mq" as mq;
+
+main {
+  @include mq.mq($until: 'tablet') {
+    margin-bottom: ab.map-deep(ab.$nav-mobile, height);
+  }
+}
+
+.nav-mobile {
+  // Positioning
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: ab.z('above-main');
+  padding: ab.map-deep(ab.$nav-mobile, padding);
+  height: ab.map-deep(ab.$nav-mobile, height);
+  // Colouring
+  background-color: var(--clr-primary);
+  border-top: solid 2px var(--clr-accent);
+
+  // Internal Layout
+  display: block;
+  @include mq.mq($from: 'tablet') {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  a {
+    height: ab.map-deep(ab.$nav-mobile-calc, a-tag);
+    width: ab.map-deep(ab.$nav-mobile-calc, a-tag);
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-secondary);
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    padding: 0.5rem ab.map-deep(ab.$nav-mobile, icon-padding);
+  }
+
+  i:before {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

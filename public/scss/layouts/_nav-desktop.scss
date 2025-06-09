@@ -1,15 +1,21 @@
 @use "sass:map";
 @use "../abstracts" as ab;
+@use "../utilities/mq" as mq;
 
 // Including styles for main related to the sidebar
 main {
   position: relative;
   z-index: ab.z('default');
-  width: calc(100% - calc(ab.map-deep(ab.$sidebar, width)));
   margin-left: auto;
   min-height: 100vh;
   @include ab.transitions(map.get(ab.$transitions, main));
-  border-left: solid 2px var(--clr-accent);
+
+  // As sidebar will be hidden on mobile view
+  width: 100%;
+  @include mq.mq($from: tablet) {
+    width: calc(100% - calc(ab.map-deep(ab.$sidebar, width)));
+    border-left: solid 2px var(--clr-accent);
+  }
 }
 
 .nav-desktop {
@@ -23,9 +29,14 @@ main {
   padding: ab.map-deep(ab.$sidebar, padding);
   // Colouring
   background-color: var(--clr-primary);
-  // Internal Layout
-  display: flex;
-  flex-direction: column;
+
+  // Only show in desktop
+  display: none;
+  @include mq.mq($from: tablet) {
+    // Internal Layout
+    display: flex;
+    flex-direction: column;
+  }
 
   &, *, *:before, *:after {
     @include ab.transitions(map.get(ab.$transitions, sidebar));

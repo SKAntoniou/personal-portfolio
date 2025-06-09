@@ -29,3 +29,15 @@ $sidebar-calc: (
     + (fn.map-deep($sidebar, padding))))
     ),
 );
+$nav-mobile: (
+  height: 5.5rem,
+  padding: fn.map-deep($g-padding, small),
+  icon-container: 1.75rem,
+  icon-padding: fn.map-deep($g-padding, small),
+);
+$nav-mobile-calc: (
+  a-tag: calc( 
+    fn.map-deep($nav-mobile, height)
+    - (2 * fn.map-deep($nav-mobile, padding))
+  ),
+);

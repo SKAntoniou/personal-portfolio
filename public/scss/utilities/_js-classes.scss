@@ -23,10 +23,12 @@
   }
 }
 .main-collapsed {
-  width: calc(100% - calc(ab.map-deep(ab.$sidebar-calc, collapsed)));
+  @include mq.mq($from: tablet) {
+    width: calc(100% - calc(ab.map-deep(ab.$sidebar-calc, collapsed)));
+  }
 }
 #sidebar-collapse.rotate {
-  i:before{
+  i:before {
     transform: rotate(180deg);
   }
 }
